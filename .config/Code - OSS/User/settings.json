@@ -1,0 +1,89 @@
+{
+    "terminal.integrated.shell.windows": "C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\powershell.exe",
+    "window.zoomLevel": -1,
+    "C_Cpp.default.cppStandard": "c++17",
+    "C_Cpp.default.cStandard": "c11",
+    "C_Cpp.default.intelliSenseMode": "gcc-x64",
+    "gitlens.views.compare.location": "explorer",
+    "git.confirmSync": false,
+    "git.enableSmartCommit": true,
+    "python.pythonPath": "/bin/python",
+    "workbench.activityBar.visible": false,
+    "files.autoSave": "onFocusChange",
+    "terminal.external.windowsExec": "C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\powershell.exe",
+    "editor.acceptSuggestionOnEnter": "smart",
+    "workbench.sideBar.location": "left",
+    "window.menuBarVisibility": "default",
+    "explorer.confirmDelete": false,
+    "git.autofetch": true,
+    "debug.openDebug": "neverOpen",
+    "workbench.statusBar.visible": true,
+    "comments.openPanel": "neverOpen",
+    "breadcrumbs.enabled": true,
+    "explorer.confirmDragAndDrop": false,
+    "workbench.startupEditor": "newUntitledFile",
+    "liveshare.featureSet": "insiders",
+    "javascript.updateImportsOnFileMove.enabled": "always",
+    "editor.acceptSuggestionOnCommitCharacter": false,
+    "liveServer.settings.donotShowInfoMsg": true,
+    "[javascript]": {
+        "editor.defaultFormatter": "vscode.typescript-language-features"
+    },
+    "gitlens.advanced.messages": {
+        "suppressLineUncommittedWarning": true
+    },
+    "[html]": {
+        "editor.defaultFormatter": "vscode.html-language-features"
+    },
+    "workbench.tree.indent": 20,
+    "material-icon-theme.showWelcomeMessage": false,
+    "editor.fastScrollSensitivity": 3,
+    "[json]": {
+        "editor.defaultFormatter": "vscode.json-language-features"
+    },
+    "gitlens.mode.active": "zen",
+    "vsicons.dontShowNewVersionMessage": true,
+    "[javascriptreact]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "editor.suggestSelection": "first",
+    "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
+    "python.jediEnabled": false,
+    "[css]": {
+        "editor.defaultFormatter": "HookyQR.beautify"
+    },
+    "editor.fontSize": 15,
+    "editor.mouseWheelScrollSensitivity": 1.8,
+    "[typescript]": {
+        "editor.defaultFormatter": "vscode.typescript-language-features"
+    },
+    "[jsonc]": {
+        "editor.defaultFormatter": "vscode.json-language-features"
+    },
+    "[typescriptreact]": {
+        "editor.defaultFormatter": "vscode.typescript-language-features"
+    },
+    "typescript.updateImportsOnFileMove.enabled": "always",
+    "editor.tokenColorCustomizations": { "comments": "#229977" },
+    "workbench.colorCustomizations": {
+        "editorError.foreground": "#ff0000",
+        "editorWarning.foreground": "#ccc919",
+        "editorInfo.foreground": "#8383c0"
+    },
+    "javascript.preferences.quoteStyle": "double",
+    "typescript.preferences.quoteStyle": "double",
+    "diffEditor.ignoreTrimWhitespace": false,
+    "materialTheme.accent": "Remove accents",
+    "workbench.colorTheme": "Material Theme Darker High Contrast",
+    "editor.smoothScrolling": true,
+    "terminal.explorerKind": "external",
+    "terminal.external.linuxExec": "bash",
+    "terminal.integrated.shell.linux": "/bin/bash",
+    "workbench.iconTheme": "material-icon-theme",
+    "files.associations": {
+    
+    },
+    "go.useLanguageServer": true,
+    "keyboard.dispatch": "keyCode",
+    "editor.multiCursorModifier": "ctrlCmd"
+}
