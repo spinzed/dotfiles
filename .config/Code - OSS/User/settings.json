@@ -8,7 +8,7 @@
     "git.confirmSync": false,
     "git.enableSmartCommit": true,
     "python.pythonPath": "/bin/python",
-    "workbench.activityBar.visible": false,
+    "workbench.activityBar.visible": true,
     "files.autoSave": "onFocusChange",
     "terminal.external.windowsExec": "C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\powershell.exe",
     "editor.acceptSuggestionOnEnter": "smart",
@@ -85,5 +85,7 @@
     },
     "go.useLanguageServer": true,
     "keyboard.dispatch": "keyCode",
-    "editor.multiCursorModifier": "ctrlCmd"
+    "editor.multiCursorModifier": "ctrlCmd",
+    "vim.enableNeovim": true,
+    "vim.neovimPath": "/bin/nvim"
 }

@@ -5,6 +5,7 @@
 # Enviromental variables
 export PATH="$PATH:$HOME/Scripts"
 export EDITOR="/bin/nvim"
+export VISUAL="/bin/nvim"
 export TERMINAL="konsole"
 export BROWSER="firefox"
 export GOPATH="$HOME/go"
