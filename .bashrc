@@ -22,7 +22,7 @@ alias ls="ls --color=auto"
 alias grep="grep --color=auto"
 alias la="ls -lah"
 alias s="sudo"
-alias fuck="sudo !!"
+alias fuck='sudo $(history -p !!)'
 alias p="sudo pacman"
 alias nv="nvim"
 alias snv="sudo nvim"
@@ -33,5 +33,5 @@ alias ref="source ~/.bash_profile"
 alias dotconf='git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
 alias repos="cd ~/Workspaces/repos"
 
-dotfiles config --local status.showUntrackedFiles no # disable viewing untracked files
+#dotconf config --local status.showUntrackedFiles no # disable viewing untracked files
 
