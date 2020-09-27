@@ -54,6 +54,7 @@ let g:go_metalinter_command = 'gopls' " from the last update, this works normall
 let g:coc_global_extensions = [
     \ 'coc-go',
     \ 'coc-tsserver',
+    \ 'coc-json',
     \ 'coc-python',
     \ 'coc-vetur'
     \ ]
