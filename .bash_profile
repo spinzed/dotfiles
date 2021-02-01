@@ -3,7 +3,7 @@
 #
 
 # Enviromental variables
-export PATH="$PATH:$HOME/Scripts"
+export PATH="$PATH:$HOME/.local/bin:$HOME/Scripts"
 export EDITOR="/bin/nvim"
 export VISUAL="/bin/nvim"
 export TERMINAL="konsole"

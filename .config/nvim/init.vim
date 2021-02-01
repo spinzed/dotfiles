@@ -98,7 +98,7 @@ map <leader>k :wincmd k<CR>
 map <leader>l :wincmd l<CR>
 map <leader>e :Lexplore<CR>
 map <leader>t :filetype detect<CR> " refresh file type
-nnoremap <C-\> :vs<CR>:term<CR>
+nnoremap <C-\> :vs<CR>:term<CR><S-a>
 vnoremap <C-S-c> "*y :let @+=@*<CR>
 tnoremap <ESC> <C-\><C-n>
 " Plugin binds

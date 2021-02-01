@@ -16,9 +16,13 @@ SaveGeometryOnExit=false
 ShowMenuBarByDefault=false
 
 [MainWindow]
+HDMI-0 XPosition=871
+HDMI-0 YPosition=194
 MenuBar=Disabled
 State=AAAA/wAAAAD9AAAAAAAAApcAAAGaAAAABAAAAAQAAAAIAAAACPwAAAAA
 ToolBarsMovable=Disabled
+eDP-1 XPosition=737
+eDP-1 YPosition=301
 
 [Notification Messages]
 CloseAllTabs=true

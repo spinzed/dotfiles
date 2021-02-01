@@ -11,8 +11,6 @@ PS1="\[$(tput setaf 48)\]\u\[$(tput setaf 063)\]@\h \[$(tput setaf 056)\]\W \[$(
 # General settings
 set -o vi # Enable vi mode in terminal
 shopt -s autocd # Allows to cd into a directory by typing its name
-xset r rate 250 50 # Change the keyboard speed
-setxkbmap -option caps:escape # Bind Caps Lock to ESC
 stty -ixon # Disable Ctrl-s & Ctrl-q
 
 shopt -s checkwinsize # Prevent terminal from messing up after commands. On by default

@@ -1,6 +1,6 @@
 {
     "terminal.integrated.shell.windows": "C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\powershell.exe",
-    "window.zoomLevel": -1,
+    "window.zoomLevel": 0,
     "C_Cpp.default.cppStandard": "c++17",
     "C_Cpp.default.cStandard": "c11",
     "C_Cpp.default.intelliSenseMode": "gcc-x64",
@@ -87,5 +87,10 @@
     "keyboard.dispatch": "keyCode",
     "editor.multiCursorModifier": "ctrlCmd",
     "vim.enableNeovim": true,
-    "vim.neovimPath": "/bin/nvim"
+    "vim.neovimPath": "/bin/nvim",
+    "launch": {
+
+        "configurations": [],
+        "compounds": []
+    }
 }

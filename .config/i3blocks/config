@@ -1,0 +1,47 @@
+# i3blocks configuration file
+#
+# The i3blocks man page describes the usage of the binary,
+# and its website describes the configuration:
+#
+#     https://vivien.github.io/i3blocks
+
+
+# Global properties
+separator=true
+separator_block_width=25
+
+[wireless]
+command=echo " $(iw dev | grep ssid | awk '{print $2}') $(ip route | grep default | awk '{print $9}')"
+label=W:
+interval=30s
+color=#f5af19
+
+[battery2]
+command=$SCRIPT_DIR/battery2/battery2
+markup=pango
+interval=30
+#color=#f5af19
+
+[backlight]
+command=echo " $(light | awk '{printf "%3.0f", $1}')%"
+label=☀
+interval=once
+signal=1
+
+[volume]
+command=echo " $(pamixer --get-volume-human | awk '{printf "%3.0f", $1}')%"
+label=♪
+interval=once
+signal=1
+
+[memory]
+command=echo " $(free -m | awk 'NR==2{printf "%.3f G", $3/1024 }') / $(free -m | awk 'NR==2{printf "%.3f G", $2/1024 }')"
+# this is ttf-font-awesome ram-stick
+label=
+interval=30s
+#color=#f12711
+
+[time]
+command=date '+%Y-%m-%d %H:%M'
+interval=5
+
