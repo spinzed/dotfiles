@@ -50,7 +50,8 @@ let g:go_fmt_autosave = 1
 let g:go_fmt_command = 'goimports' " enables autoimports, but slow on large codebases
 let g:go_metalinter_autosave=1
 let g:go_metalinter_autosave_enabled=['typecheck', 'govet'] " golint kinda goes on my nerves
-let g:go_metalinter_command = 'gopls' " from the last update, this works normally. Is fast.
+"let g:go_metalinter_command = 'gopls' " from the last update, this works normally. Is fast.
+let g:go_metalinter_command = 'golangci-lint' " both are broken rn, but this one is less
 let g:coc_global_extensions = [
     \ 'coc-go',
     \ 'coc-tsserver',

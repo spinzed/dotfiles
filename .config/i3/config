@@ -12,6 +12,7 @@
 # Please see https://i3wm.org/docs/userguide.html for a complete reference!
 
 set $mod Mod4
+set $alt Mod1
 
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below.
@@ -32,6 +33,16 @@ exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
 # NetworkManager is the most popular way to manage wireless networks on Linux,
 # and nm-applet is a desktop environment-independent system tray GUI for it.
 exec --no-startup-id nm-applet
+
+# Start copyq, a clipboard manager
+exec --no-startup-id copyq
+
+# Start picom, a compositor (old name compton)
+exec picom --config ~/.config/picom/picom.conf
+
+# Feh sets the background wallpaper. Sometimes can leave smalls gaps if
+# it isn't executed on every i3 restart
+exec_always feh --bg-scale ~/Pictures/wallpaper.png
 
 # Start rofi (a program launcher)
 #bindsym $mod+d exec --no-startup-id dmenu_run
@@ -61,6 +72,17 @@ bindsym XF86AudioPlay exec playerctl play
 bindsym XF86AudioPause exec playerctl pause
 bindsym XF86AudioNext exec playerctl next
 bindsym XF86AudioPrev exec playerctl previous
+
+# Screenshots
+set $screenshot-dir ~/Pictures/Screenshots
+bindsym $mod+Print exec --no-startup-id "mkdir $screenshot-dir; maim --select $screenshot-dir/$(date '+%Y-%m-%d-%H:%M').png"
+#bindsym $mod+Print exec --no-startup-id maim --window $(xdotool getactivewindow) $screenshot-file
+#bindsym Shift+Print exec --no-startup-id maim --select $screenshot-dir
+
+## Clipboard Screenshots
+bindsym Ctrl+Print exec --no-startup-id maim | xclip -selection clipboard -t image/png
+bindsym Alt+Print exec --no-startup-id maim --window $(xdotool getactivewindow) | xclip -selection clipboard -t image/png
+bindsym Print exec --no-startup-id maim --select | xclip -selection clipboard -t image/png
 
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
@@ -158,10 +180,14 @@ bindsym $mod+Shift+8 move container to workspace $ws8
 bindsym $mod+Shift+9 move container to workspace $ws9
 bindsym $mod+Shift+0 move container to workspace $ws10
 
-# force particular windows to open in specific workspace
+# Force particular windows to open in specific workspace
 assign [class="firefox"] $ws1
 for_window [class="Spotify"] move --no-auto-back-and-forth container to workspace $ws9 # Spotify is special
 assign [class="discord"] $ws10
+
+# Startup apps
+exec firefox
+exec discord
 
 # reload the configuration file
 bindsym $mod+Shift+c reload
@@ -211,8 +237,7 @@ client.unfocused        $bg-color $bg-color $inactive-text-color $00ff00
 client.urgent           $urgent-bg-color    $urgent-bg-color     $text-color          $00ff00
 # indicator is a line that indicates whether the next tile will be opened h or v
 
-# Start i3bar to display a workspace bar (plus the system information i3status
-# finds out, if available)
+# Start i3bar to display a workspace bar (plus i3blocks)
 bar {
         status_command SCRIPT_DIR=~/.config/i3blocks/scripts i3blocks
         #status_command i3status
@@ -227,28 +252,30 @@ bar {
         }
 }
 
-### Window customisation
-# Disable title bars
+# Disable title bars and set window border size. Disabling title bars is
+# to set gaps required
 for_window [class="^.*"] border pixel 1
 new_window 1pixel
 hide_edge_borders both
 
-### Startup apps
-exec picom --config ~/.config/picom/picom.conf # compositor, old name compton
-exec_always feh --bg-scale ~/Pictures/wallpaper.png
-exec discord
+# Gap settings
+set $gap-size 20
+gaps inner 20
+bindsym $mod+g gaps inner all toggle $gap-size
 
-# Startup settings which should be in .xinitrc but are not cuz Xorg
-exec xset r rate 250 50 # change the keyboard speed
-exec setxkbmap -option caps:escape # bind Caps Lock to ESC
+# Xorg settings that should be in .xinitrc but are not cuz Xorg
+exec_always xset s off # Disable screen saver
+exec_always xset r rate 250 50 # change the keyboard speed
+exec_always setxkbmap -option caps:escape # bind Caps Lock to ESC
 # setxkbmap -option # return to normal
-exec xset m 1/1 0 # disable mouse acceleration... sort of, not really
+# exec xset m 1/1 0 # disable mouse acceleration... sort of, not really
 exec xrandr --output HDMI-0 --mode 1920x1080 --rate 144.00 # enable 144 Hz on the monitor
-exec s off # Disable screen saver
+# exec xrandr --output eDP-1-1 --brightness 1.2 # raise max laptop brightness
+# exec xrandr --auto --output eDP-1-1 --mode 1920x1080 --left-of HDMI-0 # set the laptop screen left of the monitor
 
-### Custom keybinds
 # Lock the screen
 bindsym $mod+shift+m exec i3lock -f --color "$bg-color"
-# toggle gaps
-bindsym $mod+g gaps inner all toggle 20
+
+# Kill Xorg
+bindsym Ctrl+$alt+BackSpace exec killall Xorg
 

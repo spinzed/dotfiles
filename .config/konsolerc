@@ -1,5 +1,5 @@
 [Desktop Entry]
-DefaultProfile=Profile 1.profile
+DefaultProfile=Main.profile
 
 [DownloadDialog Settings]
 Height 1080=494
@@ -16,13 +16,9 @@ SaveGeometryOnExit=false
 ShowMenuBarByDefault=false
 
 [MainWindow]
-HDMI-0 XPosition=871
-HDMI-0 YPosition=194
 MenuBar=Disabled
 State=AAAA/wAAAAD9AAAAAAAAApcAAAGaAAAABAAAAAQAAAAIAAAACPwAAAAA
 ToolBarsMovable=Disabled
-eDP-1 XPosition=737
-eDP-1 YPosition=301
 
 [Notification Messages]
 CloseAllTabs=true
