@@ -22,14 +22,16 @@ alias la="ls -lah"
 alias s="sudo"
 alias fuck='sudo $(history -p !!)'
 alias p="sudo pacman"
+alias repos="cd ~/Workspaces/repos"
 alias nv="nvim"
 alias snv="sudo nvim"
 alias cls="clear"
+alias ref="source ~/.bash_profile"
 alias vimrc="nvim ~/.config/nvim/init.vim"
 alias bashrc="nvim ~/.bashrc"
-alias ref="source ~/.bash_profile"
+alias notes="nvim ~/.notes"
+alias xorg="s nvim /etc/X11/xorg.conf" # Believe me, this was necessary...
 alias dotconf='git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
-alias repos="cd ~/Workspaces/repos"
 
-#dotconf config --local status.showUntrackedFiles no # disable viewing untracked files
+#dotconf config --local status.showUntrackedFiles no # disable viewing of untracked files
 

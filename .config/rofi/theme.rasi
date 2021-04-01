@@ -4,7 +4,7 @@
  **/
 * {
     // bg
-    background:                  rgba(25, 42, 70, 85%);
+    background:                  rgba(40, 40, 45, 80%);
     lightbg:                     rgba(0, 0, 0, 0%);
     // fg
     foreground:                  white; // text color
@@ -31,10 +31,10 @@
     selected-active-foreground:  var(background);
     selected-urgent-foreground:  var(red);
     // colors
-    red:                         rgba ( 220, 50, 47, 100 % );
+    red:                         rgba(220, 50, 47, 100 %);
     // random
     background-color:            rgba(0, 0, 0, 0%); // should be left at opacity 0
-    border-color:                var(background);
+    border-color:                rgba(60, 60, 60, 100%);
     separatorcolor:              var(foreground);
     spacing:                     2;
 }
@@ -95,7 +95,7 @@ window {
     border:           1;
 }
 mainbox {
-    padding: 30%;
+    padding: 2%;
     border:  0;
 }
 message {

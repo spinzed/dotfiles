@@ -42,12 +42,13 @@ exec picom --config ~/.config/picom/picom.conf
 
 # Feh sets the background wallpaper. Sometimes can leave smalls gaps if
 # it isn't executed on every i3 restart
-exec_always feh --bg-scale ~/Pictures/wallpaper.png
+exec_always --no-startup-id feh --bg-scale ~/Pictures/wallpaper.jpg
 
-# Start rofi (a program launcher)
+# Start rofi (a program launcher) in app lanucher mode or window select mode
 #bindsym $mod+d exec --no-startup-id dmenu_run
-#bindsym $mod+d exec rofi -show run -lines 5 -eh 2 -width 100 -padding 800 -opacity "85" -bw 0 -bc "$focused-color" -bg "$focused-color" -fg "$text-color" -hlbg "$focused-color" -hlfg "#9575cd"
-bindsym $mod+d exec rofi -show run -theme "~/.config/rofi/theme.rasi" -fullscreen -font "Monospace 20"
+set $roficonf -config "~/.config/rofi/theme.rasi" -theme "~/.config/rofi/theme.rasi" -font "Monospace 20"
+bindsym $mod+d exec rofi -show run $roficonf
+bindsym $mod+x exec rofi -show window $roficonf
 
 # Use pactl to adjust volume in PulseAudio.
 set $refresh_i3bar pkill -RTMIN+1 i3blocks
@@ -224,33 +225,35 @@ mode "resize" {
 bindsym $mod+r mode "resize"
 
 ### Custom colors
-set $focused-color #3051bf
-set $bg-color #192a46
+set $focused-color #929ab0
+set $bg-color #454a5c
 set $urgent-bg-color #990303
 set $text-color #ffffff
 set $inactive-text-color #b3bac9
 
 #                       border              background           text                 indicator
 client.focused          $focused-color      $focused-color       $text-color          $00ff00
-client.focused_inactive $bg-color $bg-color $inactive-text-color $00ff00
-client.unfocused        $bg-color $bg-color $inactive-text-color $00ff00
+client.focused_inactive $bg-color           $bg-color            $inactive-text-color $00ff00
+client.unfocused        $bg-color           $bg-color            $inactive-text-color $00ff00
 client.urgent           $urgent-bg-color    $urgent-bg-color     $text-color          $00ff00
 # indicator is a line that indicates whether the next tile will be opened h or v
 
 # Start i3bar to display a workspace bar (plus i3blocks)
-bar {
-        status_command SCRIPT_DIR=~/.config/i3blocks/scripts i3blocks
-        #status_command i3status
-        colors {
-            background $bg-color
-            separator #757575
-            #                  border           background       text
-            focused_workspace  $focused-color   $focused-color   $text-color
-            inactive_workspace $bg-color        $bg-color        $inactive-text-color
-            urgent_workspace   $urgent-bg-color $urgent-bg-color $text-color
+# bar {
+#         status_command SCRIPT_DIR=~/.config/i3blocks/scripts i3blocks
+#         #status_command i3status
+#         colors {
+#             background $bg-color
+#             separator #757575
+#             #                  border           background       text
+#             focused_workspace  $focused-color   $focused-color   $text-color
+#             inactive_workspace $bg-color        $bg-color        $inactive-text-color
+#             urgent_workspace   $urgent-bg-color $urgent-bg-color $text-color
+#
+#         }
+# }
 
-        }
-}
+exec_always --no-startup-id $HOME/.config/polybar/launch.sh
 
 # Disable title bars and set window border size. Disabling title bars is
 # to set gaps required
@@ -269,7 +272,8 @@ exec_always xset r rate 250 50 # change the keyboard speed
 exec_always setxkbmap -option caps:escape # bind Caps Lock to ESC
 # setxkbmap -option # return to normal
 # exec xset m 1/1 0 # disable mouse acceleration... sort of, not really
-exec xrandr --output HDMI-0 --mode 1920x1080 --rate 144.00 # enable 144 Hz on the monitor
+#set $seconmon xrandr | grep -E "HDMI.+ connected" | awk '{print $1}'
+exec xrandr --output HDMI-1-0 --mode 1920x1080 --rate 144.00 # enable 144 Hz on the monitor
 # exec xrandr --output eDP-1-1 --brightness 1.2 # raise max laptop brightness
 # exec xrandr --auto --output eDP-1-1 --mode 1920x1080 --left-of HDMI-0 # set the laptop screen left of the monitor
 
