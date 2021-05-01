@@ -4,7 +4,7 @@
  **/
 * {
     // bg
-    background:                  rgba(40, 40, 45, 80%);
+    background:                  rgba(40, 40, 45, 85%);
     lightbg:                     rgba(0, 0, 0, 0%);
     // fg
     foreground:                  white; // text color
@@ -83,11 +83,14 @@ element-text {
     background-color: rgba ( 0, 0, 0, 0 % );
     highlight:        inherit;
     text-color:       inherit;
+    // vertical align: 0 is top, 0.5 is mid and 1 is bottom
+    vertical-align:   0.5;
 }
 element-icon {
     background-color: rgba ( 0, 0, 0, 0 % );
     size:             1.0000em ;
     text-color:       inherit;
+    margin:           0 0.5em 0 0;
 }
 window {
     padding:          5;

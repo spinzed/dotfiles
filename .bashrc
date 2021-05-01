@@ -16,7 +16,7 @@ stty -ixon # Disable Ctrl-s & Ctrl-q
 shopt -s checkwinsize # Prevent terminal from messing up after commands. On by default
 
 # Aliases
-alias ls="ls --color=auto"
+alias ls="ls --color=auto --group-directories-first"
 alias grep="grep --color=auto"
 alias la="ls -lah"
 alias s="sudo"

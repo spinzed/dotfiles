@@ -1,0 +1,89 @@
+#!/bin/sh
+
+# bspwmrc
+
+# Remove all bsp rule on config reload
+bspc rule -r "*"
+
+# If picom is running already, that means that the wm is running too. If
+# it isn't, run the the following commands.
+if ! [ "$(pgrep -x sxhkd)" ]; then
+    # Start sxhkd, a hotkey deamon
+    sxhkd &
+
+    # # xss-lock grabs a logind suspend inhibit lock and will use i3lock to lock the
+    # screen before suspend. Use loginctl lock-session to lock your screen.
+    xss-lock --transfer-sleep-lock -- i3lock --nofork &
+
+    # Start nm-applet, the basic applet for NetworkManager
+    nm-applet &
+
+    # Start copyq, a clipboard manager
+    copyq &
+
+    # Start dunst, a notification deamon
+    dunst &
+
+    # Start picom, a compositor (old name compton)
+    picom --config ~/.config/picom/picom.conf &
+
+    # Feh sets the background wallpaper. Sometimes can leave smalls gaps if
+    # it isn't executed on every i3 restart
+    feh --no-feh-bg --bg-scale ~/Pictures/wallpaper.jpg &
+
+    # Startup apps
+    discord &
+    firefox &
+else
+    # Send signal SIGUSR1 to sxhkd to reload its config
+    killall -10 sxhkd
+fi
+
+# Launch polybar
+~/.config/polybar/launch.sh &
+
+#
+# bspwm-related config
+#
+
+# Initialize workspaces for all monitors
+bspc monitor -d I II III IV V VI VII VIII IX X
+
+# General config
+bspc config automatic_scheme alternate
+bspc config initial_polarity second_child
+
+bspc config pointer_modifier mod4
+bspc config pointer_action1 move
+bspc config pointer_action2 resize_side
+
+bspc config pointer_action3 resize_corner
+bspc config click_to_focus none
+bspc config focus_follows_pointer true
+bspc config ignore_ewmh_focus true
+
+bspc config remove_disabled_monitors true
+bspc config remove_unplugged_monitors true
+bspc config merge_overlapping_monitors true
+
+# Make the floating window dragging smooth on external 144 Hz monitor
+if [ $MONITOR = "external" ]; then
+    bspc config pointer_motion_interval 6.944444444444444ms
+fi
+
+# Colors
+bspc config normal_border_color "#454a5c"
+bspc config active_border_color "#929ab0"
+bspc config focused_border_color "#929ab0"
+bspc config urgent_border_color "#990303"
+bspc config presel_feedback_color "#000000" # nmp sta je ovo
+
+#bspc config top_padding 32
+bspc config window_gap 20
+bspc config border_width 2
+
+# Rules for certain applications
+bspc rule -a firefox desktop=^1
+bspc rule -a spotify desktop=^9 # doesn't work because spotify is bad
+bspc rule -a discord desktop=^10
+

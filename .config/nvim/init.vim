@@ -11,8 +11,9 @@ set noerrorbells
 set splitbelow splitright
 set number
 set nowrap
-set showcmd " show currently inputted letters in normal mode
+set showcmd " show currently inputed letters in normal mode
 set incsearch " improved search mode (alias ic)
+set ignorecase " same as set ic, ignores case on search except if an uppercase letter is passed
 set nohlsearch " remove search highlighting
 set smartcase " search ignores case if everything is lowercase
 set noswapfile " disable swapfiles (looking for replacement)
@@ -38,27 +39,51 @@ Plug 'mattn/emmet-vim'
 call plug#end()
 
 " Plugin settings
+
+" netrw
 let g:netrw_banner = 0
 let g:netrw_liststyle = 3
 let g:netrw_browse_split = 4
 let g:netrw_winsize = 20
 let g:netrw_preview = 1
 let g:netrw_list_hide= '.git'
+
+" CtrlP
 let g:ctrlp_user_command = ['.git/', 'git --git-dir=%s/.git ls-files -oc --exclude-standard']
 let g:ctrlp_working_path_mode="ra"
+
+" vim-go
 let g:go_fmt_autosave = 1
 let g:go_fmt_command = 'goimports' " enables autoimports, but slow on large codebases
-let g:go_metalinter_autosave=1
-let g:go_metalinter_autosave_enabled=['typecheck', 'govet'] " golint kinda goes on my nerves
-"let g:go_metalinter_command = 'gopls' " from the last update, this works normally. Is fast.
-let g:go_metalinter_command = 'golangci-lint' " both are broken rn, but this one is less
-let g:coc_global_extensions = [
-    \ 'coc-go',
-    \ 'coc-tsserver',
-    \ 'coc-json',
-    \ 'coc-python',
-    \ 'coc-vetur'
-    \ ]
+
+let g:go_rename_command = 'gopls'
+
+let g:go_metalinter_command = 'golangci-lint'
+let g:go_metalinter_autosave = 1
+let g:go_metalinter_enabled = ['gosimple', 'staticcheck', 'typecheck', 'unused', 'varcheck']
+let g:go_metalinter_autosave_enabled = ['gosimple', 'staticcheck', 'typecheck', 'unused', 'varcheck']
+
+let g:go_highlight_structs = 1
+let g:go_highlight_methods = 1
+let g:go_highlight_functions = 1
+let g:go_highlight_function_calls = 1
+"let g:go_highlight_function_parameters = 1
+let g:go_highlight_operators = 1
+let g:go_highlight_format_strings = 1
+let g:go_highlight_string_spellcheck = 1
+let g:go_highlight_types = 1
+let g:go_highlight_fields = 1
+let g:go_highlight_variable_declarations = 1
+let g:go_highlight_build_constraints = 1
+
+" coc
+"let g:coc_global_extensions = [
+"    \ 'coc-go',
+"    \ 'coc-tsserver',
+"    \ 'coc-json',
+"    \ 'coc-python',
+"    \ 'coc-vetur'
+"    \ ]
 "    \ 'coc-eslint',
 "    \ 'coc-pairs',
 
