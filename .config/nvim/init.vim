@@ -32,7 +32,6 @@ Plug 'joshdick/onedark.vim'
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'jiangmiao/auto-pairs'
 Plug 'airblade/vim-gitgutter'
-Plug 'vim-syntastic/syntastic'
 Plug 'neoclide/coc.nvim', { 'branch': 'release' }
 Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 Plug 'mattn/emmet-vim'
@@ -54,9 +53,12 @@ let g:ctrlp_working_path_mode="ra"
 
 " vim-go
 let g:go_fmt_autosave = 1
-let g:go_fmt_command = 'goimports' " enables autoimports, but slow on large codebases
+let g:go_fmt_command = 'gopls' " the default, other option are gofmt and goimports
 
 let g:go_rename_command = 'gopls'
+"let g:go_gopls_staticcheck = v:null
+let g:go_gopls_staticcheck = 1
+
 
 let g:go_metalinter_command = 'golangci-lint'
 let g:go_metalinter_autosave = 1
@@ -123,8 +125,6 @@ map <leader>j :wincmd j<CR>
 map <leader>k :wincmd k<CR>
 map <leader>l :wincmd l<CR>
 map <leader>e :Lexplore<CR>
-map <leader>g :GoDecls<CR>
-map <leader><s-g> :GoDeclsDir<CR>
 map <leader>t :filetype detect<CR> " refresh file type
 nnoremap <C-\> :vs<CR>:term<CR><S-a>
 vnoremap <C-S-c> "*y :let @+=@*<CR>
@@ -132,6 +132,9 @@ tnoremap <ESC> <C-\><C-n>
 " Plugin binds
 nnoremap <silent><nowait> <leader>a :<C-u>CocDiagnostics<cr>
 nmap <leader>r <Plug>(coc-rename)
+nmap <F2> <Plug>(coc-rename)
+map <leader>g :GoDecls<CR>
+map <leader><s-g> :GoDeclsDir<CR>
 
 " Temporary cheat sheet
 " :args *.type - load all files as buffers

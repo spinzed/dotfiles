@@ -25,7 +25,7 @@ if ! [ "$(pgrep -x sxhkd)" ]; then
     dunst &
 
     # Start picom, a compositor (old name compton)
-    picom --config ~/.config/picom/picom.conf &
+    picom --config ~/.config/picom/picom.conf --experimental-backends &
 
     # Feh sets the background wallpaper. Sometimes can leave smalls gaps if
     # it isn't executed on every i3 restart
@@ -69,6 +69,8 @@ bspc config merge_overlapping_monitors true
 # Make the floating window dragging smooth on external 144 Hz monitor
 if [ $MONITOR = "external" ]; then
     bspc config pointer_motion_interval 6.944444444444444ms
+else
+    bspc config pointer_motion_interval 16.666666666666666ms
 fi
 
 # Colors
@@ -86,4 +88,7 @@ bspc config border_width 2
 bspc rule -a firefox desktop=^1
 bspc rule -a spotify desktop=^9 # doesn't work because spotify is bad
 bspc rule -a discord desktop=^10
+bspc rule -a Thunar state=floating
+bspc rule -a copyq state=floating
+bspc rule -a copyq state=nm-connection-editor
 
