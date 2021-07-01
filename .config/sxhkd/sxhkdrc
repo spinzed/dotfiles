@@ -23,9 +23,13 @@ super + Escape
 
 # quit/restart bspwm
 # note: restarting bspwm this way is weird, it may mess up sxhkd and polybar
+# and the keybind for it is disabled because of that particular reason.
 # running the command from the terminal doesn't seem to provoke such issues
-super + {alt, shift} + r
-	bspc {quit,wm -r}
+#
+# super + {alt, shift} + r
+# 	bspc {quit,wm -r}
+super + alt + r
+ 	bspc quit
 
 # close and kill
 super + {shift, alt} + q
@@ -144,19 +148,19 @@ XF86AudioMicMute
 
 # Adjust laptop screen brigtness via light (xbacklight doesn't work lmao)
 XF86MonBrightnessUp
-    exec light -A 5 # increase screen brightness
+    light -A 5 # increase screen brightness
 XF86MonBrightnessDown
-    exec light -U 5 # decrease screen brightness
+    light -U 5 # decrease screen brightness
 
 # Media player controls
 XF86AudioPlay
-    exec playerctl play
+    playerctl play
 XF86AudioPause
-    exec playerctl pause
+    playerctl pause
 XF86AudioNext
-    exec playerctl next
+    playerctl next
 XF86AudioPrev
-    exec playerctl previous
+    playerctl previous
 
 # Screenshots
 set $screenshot-dir ~/Pictures/Screenshots
@@ -175,6 +179,11 @@ alt + Print
 Print
     maim --select | xclip -selection clipboard -t image/png
 
-# Kill Xorg
+# Start Thunar
+super + shift + e
+    thunar
+
+# Kill Xorg. It seems as like this is already the default, but
+# I've rebound it just in case
 ctrl + alt + BackSpace
     killall Xorg

@@ -247,7 +247,7 @@ exec discord
 # Disable title bars and set window border size. Disabling title bars is
 # to set gaps required
 for_window [class="^.*"] border pixel 2
-new_window 2pixel
+new_window 1pixel
 hide_edge_borders both
 
 # Gap settings
