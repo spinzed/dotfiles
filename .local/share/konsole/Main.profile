@@ -1,6 +1,6 @@
 [Appearance]
 ColorScheme=Aritim Dark
-Font=monospace,12,-1,2,50,0,0,0,0,0
+Font=Hack,12,-1,5,50,0,0,0,0,0
 
 [General]
 Name=Main

@@ -5,7 +5,7 @@
 # Remove all bsp rule on config reload
 bspc rule -r "*"
 
-# If picom is running already, that means that the wm is running too. If
+# If sxhkd is running already, that means that the wm is running too. If
 # it isn't, run the the following commands.
 if ! [ "$(pgrep -x sxhkd)" ]; then
     # Start sxhkd, a hotkey deamon
@@ -93,5 +93,8 @@ bspc rule -a spotify desktop=^9 # doesn't work because spotify is bad
 bspc rule -a discord desktop=^10
 bspc rule -a Thunar state=floating
 bspc rule -a copyq state=floating
+bspc rule -a nm-applet state=floating
 bspc rule -a nm-connection-editor state=floating
+bspc rule -a calculator state=floating
+bspc rule -a gnome-calculator state=floating
 

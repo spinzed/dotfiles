@@ -15,7 +15,7 @@ xset r rate 250 50
 # Keyboard bind settings
 setxkbmap -option caps:escape_shifted_capslock # bind Caps Lock to ESC and shift + Caps Lock to Caps Lock
 # setxkbmap -option # revert the caps lock bind
-setxkbmap -option grp:win_space_toggle -layout us,hr,rs
+setxkbmap -option grp:win_space_toggle -layout us,hr,rs,ru
 
 # In cases where the pointer should b a black cross, this
 # changes it to be normal (per example when hovering over background)

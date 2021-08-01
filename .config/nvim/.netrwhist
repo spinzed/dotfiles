@@ -1,0 +1,12 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhistcnt =5
+let g:netrw_dirhist_5='/etc/nginx'
+let g:netrw_dirhist_4='/usr/local/etc'
+let g:netrw_dirhist_3='/home/spinzed/Workspaces/repos/ssh-test/internal'
+let g:netrw_dirhist_2='/home/spinzed/Workspaces/repos/ssh-test/server'
+let g:netrw_dirhist_1='/home/spinzed'
+let g:netrw_dirhist_0='/home/spinzed/.config/i3'
+let g:netrw_dirhist_9='/home/spinzed/Workspaces/repos/litch/test'
+let g:netrw_dirhist_8='/home/spinzed'
+let g:netrw_dirhist_7='/home/spinzed/.gnupg'
+let g:netrw_dirhist_6='/home/spinzed/.gnupg/private-keys-v1.d'

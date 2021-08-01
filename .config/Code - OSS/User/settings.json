@@ -93,5 +93,5 @@
     "css.lint.unknownAtRules": "ignore",
     "workbench.editor.untitled.hint": "hidden",
     "editor.minimap.enabled": false,
-    "workbench.activityBar.visible": false
+    "window.zoomLevel": -1
 }

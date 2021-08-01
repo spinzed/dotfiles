@@ -116,6 +116,10 @@ super + ctrl + space
 super + ctrl + shift + space
 	bspc query -N -d | xargs -I id -n 1 bspc node id -p cancel
 
+# swap horizontal and vertical
+super + ctrl + m
+    bspc node @parent -R 90
+
 #
 # move/resize
 #
@@ -187,3 +191,4 @@ super + shift + e
 # I've rebound it just in case
 ctrl + alt + BackSpace
     killall Xorg
+
