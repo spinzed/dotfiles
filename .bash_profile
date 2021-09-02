@@ -11,6 +11,7 @@ export BROWSER="firefox"
 export GOPATH="$HOME/go"
 export PATH="$PATH:$GOPATH/bin"
 export NODE_PATH="/usr/local/bin"
+export HISTCONTROL=ignoreboth
 
 # Make discrete graphics the default OpenGL renderer
 # IT SHOULD DEFINITELY NOT BE DONE THIS WAY.

@@ -1,5 +1,6 @@
 -- lsp
 
+
 local lsp = require("lspconfig")
 
 -- Go's language server
@@ -17,7 +18,7 @@ lsp.gopls.setup{
 
 -- Helper function to run goimports on save. Not part of lsp
 function goimports(timeout_ms)
-    local context = { only = { "source.organizeImports" } }
+    --local context = { only = { "source.organizeImports" } }
     vim.validate { context = { context, "t", true } }
 
     local params = vim.lsp.util.make_range_params()
@@ -48,10 +49,14 @@ end
 
 -- Using lua tell vimscript to call the lua function with timeout of 1000 ms
 vim.api.nvim_command("autocmd BufWritePre *.go lua goimports(1000)")
+vim.api.nvim_command("autocmd BufWritePre *.go lua vim.lsp.buf.formatting{}")
 
 -- Python's language server
 lsp.pyright.setup{}
 
 -- TS language server. Works w/ JS & React too
 lsp.tsserver.setup{}
+
+-- C/Cpp language server. This is clang LS, but should work pretty well with gcc
+lsp.clangd.setup{}
 

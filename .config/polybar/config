@@ -24,6 +24,7 @@ background-alt = #333
 ;foreground = #dfdfdf
 ;compositing-foreground = #000000
 foreground = #fffffff
+;foreground-alt = #97b8b4
 foreground-alt = #555
 primary = #ffb52a
 secondary = #e60053
@@ -57,11 +58,9 @@ module-margin-right = 2
 
 #font-0 = Fira Code:pixelsize=10;0
 font-0 = fixed:pixelsize=10;0
-font-1 = Font Awesome 5 Free:style=solid:pixelsize=10;0
-font-2 = unifont:fontformat=truetype:size=8:antialias=false;0
-font-3 = siji:pixelsize=10;1
-font-4 = Monospace:pixelsize=10;0
-font-5 = noto-sans:pixelsize=10;0
+font-1 = Font Awesome 5 Free:style=solid:pixelsize=16;0
+font-2 = unifont:fontformat=truetype:size=16:antialias=false;0
+font-3 = siji:pixelsize=16;1
 
 modules-left = bspwm i3 xwindow
 modules-center = date

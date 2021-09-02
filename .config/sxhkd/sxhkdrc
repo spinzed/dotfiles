@@ -2,20 +2,43 @@
 # wm independent hotkeys
 #
 
-# terminal emulator
-super + Return
-    $TERMINAL
+# Terminal emulator
+# If shift is pressed, it will run the terminal in floating mode
+super + {_,shift + }Return
+    {_,bspc rule -a \* -o state=floating && }$TERMINAL
 
-# program launcher
+# Application launcher
 super + d
     rofi -show drun -modi drun,run,window,ssh -config '~/.config/rofi/config.rasi' -theme '~/.config/rofi/theme.rasi' -font 'Monospace 18' -show-icons
 
 super + x
     rofi -show window -modi window,drun,run,ssh -config '~/.config/rofi/config.rasi' -theme '~/.config/rofi/theme.rasi' -font 'Monospace 18' -show-icons
 
-# make sxhkd reload its configuration files:
-super + Escape
-	pkill -USR1 -x sxhkd
+# Make sxhkd reload its configuration files:
+#super + Escape
+#	killall sxhkd; sxhkd &; notify-send "Reloaded sxhkd config"
+
+# Lock/suspend the screen
+super + shift + {l,F10}
+    betterlockscreen -{l,s} dimblur
+
+# Start Thunar
+super + shift + e
+    thunar
+
+# Reboot
+super + shift + F11
+    reboot
+
+# Shutdown
+super + shift + F12
+    shutdown now
+
+# Kill Xorg. It seems as like this is already the default, but
+# I've rebound it just in case
+ctrl + alt + BackSpace
+    killall Xorg
+
 
 #
 # bspwm hotkeys
@@ -182,13 +205,4 @@ alt + Print
     maim --window $(xdotool getactivewindow) | xclip -selection clipboard -t image/png
 Print
     maim --select | xclip -selection clipboard -t image/png
-
-# Start Thunar
-super + shift + e
-    thunar
-
-# Kill Xorg. It seems as like this is already the default, but
-# I've rebound it just in case
-ctrl + alt + BackSpace
-    killall Xorg
 

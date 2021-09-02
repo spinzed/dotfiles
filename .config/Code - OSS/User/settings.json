@@ -92,6 +92,5 @@
     },
     "css.lint.unknownAtRules": "ignore",
     "workbench.editor.untitled.hint": "hidden",
-    "editor.minimap.enabled": false,
-    "window.zoomLevel": -1
+    "editor.minimap.enabled": false
 }

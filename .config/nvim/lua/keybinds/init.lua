@@ -15,7 +15,7 @@ map("", "<leader>s", "!clear && shellcheck %<CR>")
 map("", "<leader>t", ":filetype detect<CR>")
 
 -- Directional
-map("", "<leader>h", ":wincmd h<CR>")
+map("", "<leader>h", ":wincmd h<CR>", {nowait = true})
 map("", "<leader>j", ":wincmd j<CR>")
 map("", "<leader>k", ":wincmd k<CR>")
 map("", "<leader>l", ":wincmd l<CR>")
@@ -28,7 +28,7 @@ map("t", "<ESC>", "<C-\\><C-n>")
 -- Plugin binds
 
 -- telescope
-map("", "<C-p>", ":Telescope find_files<CR>")
+map("", "<C-p>", ":Telescope find_files<CR>", {silent = true})
 
 -- trouble
 map("", "<C-m>", ":TroubleToggle<CR>", {silent = true})
@@ -49,15 +49,15 @@ map("", "<leader>t", "<cmd>lua vim.lsp.buf.type_definition()<CR>",  {silent = tr
 
 -- lspsaga
 map("", "gh",        "<cmd>lua require('lspsaga.provider').lsp_finder()<CR>",                 {silent = true}) -- or :Lspsaga lsp_finder
-map("", "ca",        "<cmd>lua require('lspsaga.codeaction').code_action()<CR>",              {silent = true}) -- or :Lspsaga code_action
-map("", "ca",        ":<C-U>lua require('lspsaga.codeaction').range_code_action()<CR>",       {silent = true}) -- or :Lspsaga range_code_action
 map("", "gs",        "<cmd>lua require('lspsaga.signaturehelp').signature_help()<CR>",        {silent = true}) -- or :Lspsaga signature_help
 map("", "gr",        "<cmd>lua require('lspsaga.rename').rename()<CR>",                       {silent = true}) -- or :Lspsaga rename
 map("", "<F2>",      "<cmd>lua require('lspsaga.rename').rename()<CR>",                       {silent = true}) -- or :Lspsaga rename
 map("", "<leader>d", "<cmd>lua require('lspsaga.provider').preview_definition()<CR>",         {silent = true}) -- or :Lspsaga preview_definition
+map("", "<leader>c", "<cmd>lua require('lspsaga.codeaction').code_action()<CR>",              {silent = true}) -- or :Lspsaga code_action
+map("", "<leader>c", ":<C-U>lua require('lspsaga.codeaction').range_code_action()<CR>",       {silent = true}) -- or :Lspsaga range_code_action
 map("", "<S-K>",     "<cmd>lua require('lspsaga.hover').render_hover_doc()<CR>",              {silent = true}) -- or :Lspsaga hover_doc
-map("", "<C-n>",     "<cmd>lua require('lspsaga.diagnostic').lsp_jump_diagnostic_prev()<CR>", {silent = true}) -- or :Lspsaga diagnostic_jump_next
-map("", "<C-l>",     "<cmd>lua require('lspsaga.diagnostic').lsp_jump_diagnostic_next()<CR>", {silent = true}) -- or :Lspsaga diagnostic_jump_previous
+map("", "<C-n>",     "<cmd>lua require('lspsaga.diagnostic').lsp_jump_diagnostic_next()<CR>", {silent = true}) -- or :Lspsaga diagnostic_jump_next
+map("", "<C-l>",     "<cmd>lua require('lspsaga.diagnostic').lsp_jump_diagnostic_prev()<CR>", {silent = true}) -- or :Lspsaga diagnostic_jump_previous
 map("", "<C-J>",     "<cmd>lua require('lspsaga.action').smart_scroll_with_saga(1)<CR>",      {silent = true})
 map("", "<C-K>",     "<cmd>lua require('lspsaga.action').smart_scroll_with_saga(-1)<CR>",     {silent = true})
 
