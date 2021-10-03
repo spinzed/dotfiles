@@ -29,6 +29,7 @@ paq {"nvim-lua/plenary.nvim"}
 paq {"nvim-telescope/telescope.nvim"}
 -- rest
 paq {"jiangmiao/auto-pairs"}
+paq {"sophacles/vim-processing"}
 --paq {"fatih/vim-go"} -- You served me well, I'll never forget you
 
 -- Plugin-specific settings

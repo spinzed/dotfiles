@@ -14,12 +14,12 @@ super + d
 super + x
     rofi -show window -modi window,drun,run,ssh -config '~/.config/rofi/config.rasi' -theme '~/.config/rofi/theme.rasi' -font 'Monospace 18' -show-icons
 
-# Make sxhkd reload its configuration files:
-#super + Escape
-#	killall sxhkd; sxhkd &; notify-send "Reloaded sxhkd config"
+# Make sxhkd reload its configuration files
+super + Escape
+	notify-send "Reloaded sxhkd config"; killall sxhkd; sxhkd &
 
 # Lock/suspend the screen
-super + shift + {l,F10}
+super + shift + {F9,F10}
     betterlockscreen -{l,s} dimblur
 
 # Start Thunar
@@ -181,9 +181,9 @@ XF86MonBrightnessDown
 
 # Media player controls
 XF86AudioPlay
-    playerctl play
+    playerctl play-pause
 XF86AudioPause
-    playerctl pause
+    playerctl play-pause
 XF86AudioNext
     playerctl next
 XF86AudioPrev

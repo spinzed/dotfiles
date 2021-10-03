@@ -35,5 +35,5 @@ opt.autoindent = true -- apparently, smartindent is a no-no
 cmd "filetype plugin indent on"
 
 -- Change indents for js and ts to 2 spaces
-vim.api.nvim_command("autocmd Filetype javascript,typescript setlocal tabstop=2 softtabstop=2 shiftwidht=2")
+vim.api.nvim_command("autocmd Filetype javascript,typescript setlocal tabstop=2 softtabstop=2 shiftwidth=2")
 

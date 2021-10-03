@@ -11,7 +11,7 @@
     "terminal.external.windowsExec": "C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\powershell.exe",
     "editor.acceptSuggestionOnEnter": "smart",
     "workbench.sideBar.location": "left",
-    "window.menuBarVisibility": "default",
+    "window.menuBarVisibility": "compact",
     "explorer.confirmDelete": false,
     "git.autofetch": true,
     "debug.openDebug": "neverOpen",
@@ -74,7 +74,7 @@
     "materialTheme.accent": "Remove accents",
     "editor.smoothScrolling": true,
     "terminal.explorerKind": "external",
-    "terminal.external.linuxExec": "bash",
+    "terminal.external.linuxExec": "/bin/sh",
     "terminal.integrated.shell.linux": "/bin/bash",
     "workbench.iconTheme": "material-icon-theme",
     "files.associations": {
@@ -92,5 +92,6 @@
     },
     "css.lint.unknownAtRules": "ignore",
     "workbench.editor.untitled.hint": "hidden",
-    "editor.minimap.enabled": false
+    "editor.minimap.enabled": false,
+    "workbench.activityBar.visible": false
 }
