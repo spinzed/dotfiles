@@ -48,3 +48,6 @@ require("lsp-colors").setup({
 -- gitsigns
 require("gitsigns").setup{}
 
+-- autopairs
+require("nvim-autopairs").setup{}
+

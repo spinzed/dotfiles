@@ -49,7 +49,7 @@ end
 
 -- Using lua tell vimscript to call the lua function with timeout of 1000 ms
 vim.api.nvim_command("autocmd BufWritePre *.go lua goimports(1000)")
-vim.api.nvim_command("autocmd BufWritePre *.go lua vim.lsp.buf.formatting{}")
+vim.api.nvim_command("autocmd BufWritePre * lua vim.lsp.buf.formatting_sync(nil, 1000)")
 
 -- Python's language server
 lsp.pyright.setup{}

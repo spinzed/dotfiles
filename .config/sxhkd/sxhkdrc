@@ -190,13 +190,13 @@ XF86AudioPrev
     playerctl previous
 
 # Screenshots
-set $screenshot-dir ~/Pictures/Screenshots
+set $SCREENSHOTDIR ~/Pictures/Screenshots
 super + Print
-    mkdir $screenshot-dir; maim --select $screenshot-dir/$(date '+%Y-%m-%d-%H:%M').png
+    mkdir $SCREENSHOTDIR; maim --select $SCREENSHOTDIR/$(date '+%Y-%m-%d-%H:%M').png
 # super + Print
 #     maim --window $(xdotool getactivewindow) $screenshot-file
 # shift + Print
-#     maim --select $screenshot-dir
+#     maim --select $SCREENSHOTDIR
 
 # Clipboard Screenshots
 ctrl + Print

@@ -54,7 +54,7 @@ map("", "gr",        "<cmd>lua require('lspsaga.rename').rename()<CR>",         
 map("", "<F2>",      "<cmd>lua require('lspsaga.rename').rename()<CR>",                       {silent = true}) -- or :Lspsaga rename
 map("", "<leader>d", "<cmd>lua require('lspsaga.provider').preview_definition()<CR>",         {silent = true}) -- or :Lspsaga preview_definition
 map("", "<leader>c", "<cmd>lua require('lspsaga.codeaction').code_action()<CR>",              {silent = true}) -- or :Lspsaga code_action
-map("", "<leader>c", ":<C-U>lua require('lspsaga.codeaction').range_code_action()<CR>",       {silent = true}) -- or :Lspsaga range_code_action
+--map("", "<leader>c", ":<C-U>lua require('lspsaga.codeaction').range_code_action()<CR>",       {silent = true}) -- or :Lspsaga range_code_action
 map("", "<S-K>",     "<cmd>lua require('lspsaga.hover').render_hover_doc()<CR>",              {silent = true}) -- or :Lspsaga hover_doc
 map("", "<C-n>",     "<cmd>lua require('lspsaga.diagnostic').lsp_jump_diagnostic_next()<CR>", {silent = true}) -- or :Lspsaga diagnostic_jump_next
 map("", "<C-l>",     "<cmd>lua require('lspsaga.diagnostic').lsp_jump_diagnostic_prev()<CR>", {silent = true}) -- or :Lspsaga diagnostic_jump_previous

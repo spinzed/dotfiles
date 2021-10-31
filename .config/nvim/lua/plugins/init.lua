@@ -27,8 +27,8 @@ paq {'lewis6991/gitsigns.nvim'}
 paq {"nvim-lua/popup.nvim"}
 paq {"nvim-lua/plenary.nvim"}
 paq {"nvim-telescope/telescope.nvim"}
--- rest
-paq {"jiangmiao/auto-pairs"}
+-- misc
+paq {"windwp/nvim-autopairs"}
 paq {"sophacles/vim-processing"}
 --paq {"fatih/vim-go"} -- You served me well, I'll never forget you
 

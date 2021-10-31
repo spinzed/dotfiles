@@ -30,6 +30,7 @@ alias ref="source ~/.bash_profile"
 alias vimrc="cd ~/.config/nvim; nvim ~/.config/nvim/init.lua; cd -"
 alias bashrc="nvim ~/.bashrc"
 alias notes="nvim ~/.notes"
+alias code="vscodium"
 alias xorg="s -e /etc/X11/xorg.conf" # Believe me, this was necessary...
 alias dotconf='git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
 
