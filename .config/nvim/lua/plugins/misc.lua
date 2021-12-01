@@ -19,6 +19,9 @@ vim.g.go_metalinter_autosave = 1
 vim.g.go_metalinter_enabled = {"gosimple", "staticcheck", "typecheck", "unused", "varcheck"}
 vim.g.go_metalinter_autosave_enabled = {"gosimple", "staticcheck", "typecheck", "unused", "varcheck"}
 
+-- copilot
+vim.b.copilot_enabled = 0
+
 -- treesitter
 require("nvim-treesitter.configs").setup{
     ensure_installed = "maintained",

@@ -9,7 +9,7 @@ local opt = vim.opt  -- to set options
 
 
 -- General
-cmd "syntax on"
+--cmd "syntax on" // for some reason, doesn't work with filetype.nvim
 g.mapleader = " "
 opt.encoding = "utf-8"
 opt.wildmode = {"longest", "list", "full"}
@@ -36,4 +36,7 @@ cmd "filetype plugin indent on"
 
 -- Change indents for js and ts to 2 spaces
 vim.api.nvim_command("autocmd Filetype javascript,typescript setlocal tabstop=2 softtabstop=2 shiftwidth=2")
+
+-- Set default syntax highlighting
+vim.api.nvim_command("au BufNewFile,BufRead * if &syntax == '' | set syntax=config | endif")
 
