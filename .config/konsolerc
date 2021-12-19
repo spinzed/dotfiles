@@ -16,12 +16,14 @@ Favorites=
 detailViewIconSize=0
 
 [KonsoleWindow]
-SaveGeometryOnExit=false
+RememberWindowSize=false
 ShowMenuBarByDefault=false
 
 [MainWindow]
-HDMI-0 XPosition 1920x1080=972
-HDMI-0 YPosition 1920x1080=52
+HDMI-0 Height 1920x1080=1004
+HDMI-0 Width 1920x1080=1876
+HDMI-0 XPosition 1920x1080=22
+HDMI-0 YPosition 1920x1080=54
 MenuBar=Disabled
 State=AAAA/wAAAAD9AAAAAAAAAoMAAAIlAAAABAAAAAQAAAAIAAAACPwAAAABAAAAAgAAAAIAAAAWAG0AYQBpAG4AVABvAG8AbABCAGEAcgAAAAAA/////wAAAAAAAAAAAAAAHABzAGUAcwBzAGkAbwBuAFQAbwBvAGwAYgBhAHIAAAAAAP////8AAAAAAAAAAA==
 StatusBar=Disabled
@@ -29,3 +31,6 @@ ToolBarsMovable=Disabled
 
 [Notification Messages]
 CloseAllTabs=true
+
+[UiSettings]
+ColorScheme=Default

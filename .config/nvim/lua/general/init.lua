@@ -24,6 +24,7 @@ opt.ignorecase = true -- same as opt.ic, ignores case on search except if an upp
 opt.hlsearch = false -- remove search highlighting
 opt.smartcase = true -- search ignores case if everything is lowercase
 opt.swapfile = false -- disable swapfiles (looking for replacement)
+opt.undofile = true
 opt.termguicolors = true -- needed for bufferline
 
 -- Tabs and indenting

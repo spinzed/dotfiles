@@ -17,6 +17,7 @@ lsp.gopls.setup{
 }
 
 -- Helper function to run goimports on save. Not part of lsp
+-- It doesn't work properly if the go module is not initilized properly
 function goimports(timeout_ms)
     --local context = { only = { "source.organizeImports" } }
     vim.validate { context = { context, "t", true } }
@@ -48,7 +49,7 @@ function goimports(timeout_ms)
 end
 
 -- Using lua tell vimscript to call the lua function with timeout of 1000 ms
-vim.api.nvim_command("autocmd BufWritePre *.go lua goimports(1000)")
+vim.api.nvim_command("autocmd BufWritePre *.go lua goimports(500)")
 vim.api.nvim_command("autocmd BufWritePre * lua vim.lsp.buf.formatting_sync(nil, 1000)")
 
 -- Python's language server

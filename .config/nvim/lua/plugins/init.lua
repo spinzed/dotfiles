@@ -1,50 +1,49 @@
 -- Plugins
 
 
-vim.cmd "packadd paq-nvim"
-local paq = require("paq-nvim").paq
+vim.cmd "packadd packer.nvim"
 
--- paq manages itself 
-paq {"savq/paq-nvim", opt = true}
+require("packer").startup(function()
+    use "wbthomason/packer.nvim"
 
--- lsp and treesitter
-paq {"neovim/nvim-lspconfig"}
-paq {"nvim-treesitter/nvim-treesitter", run = ":TSUpdate"}
-paq {"glepnir/lspsaga.nvim"}
-paq {"github/copilot.vim"}
-paq {"onsails/lspkind-nvim"}
--- cmp
-paq {"hrsh7th/cmp-nvim-lsp"}
-paq {"hrsh7th/cmp-buffer"}
-paq {"hrsh7th/cmp-path"}
-paq {"hrsh7th/cmp-cmdline"}
-paq {"hrsh7th/nvim-cmp"}
-paq {"hrsh7th/cmp-vsnip"}
-paq {"hrsh7th/vim-vsnip"}
-paq {'golang/vscode-go'}
--- themes & visuals
-paq {"kyazdani42/nvim-web-devicons"}
-paq {"hoob3rt/lualine.nvim"}
-paq {"navarasu/onedark.nvim"}
-paq {"folke/trouble.nvim"}
-paq {"folke/lsp-colors.nvim"}
-paq {"nvim-lua/plenary.nvim"}
-paq {"lukas-reineke/indent-blankline.nvim"}
-paq {"kyazdani42/nvim-tree.lua"}
-paq {"lewis6991/gitsigns.nvim"}
---paq {"akinsho/nvim-bufferline.lua"} -- disable tabs for now
--- telescope
-paq {"nvim-lua/popup.nvim"}
-paq {"nvim-lua/plenary.nvim"}
-paq {"nvim-telescope/telescope.nvim"}
--- optimisation
-paq {"lewis6991/impatient.nvim"}
-paq {"nathom/filetype.nvim"}
-paq {"dstein64/vim-startuptime"}
--- misc
-paq {"windwp/nvim-autopairs"}
-paq {"tpope/vim-sleuth"}
---paq {"fatih/vim-go"} -- You served me well, I"ll never forget you
+    -- lsp and treesitter
+    use "neovim/nvim-lspconfig"
+    use {"nvim-treesitter/nvim-treesitter", run = ":TSUpdate"}
+    use "glepnir/lspsaga.nvim"
+    use "github/copilot.vim"
+    use "onsails/lspkind-nvim"
+    -- cmp
+    use "hrsh7th/cmp-nvim-lsp"
+    use "hrsh7th/cmp-buffer"
+    use "hrsh7th/cmp-path"
+    use "hrsh7th/cmp-cmdline"
+    use "hrsh7th/nvim-cmp"
+    use "hrsh7th/cmp-vsnip"
+    use "hrsh7th/vim-vsnip"
+    use 'golang/vscode-go'
+    -- themes & visuals
+    use "kyazdani42/nvim-web-devicons"
+    use "hoob3rt/lualine.nvim"
+    use "navarasu/onedark.nvim"
+    use "folke/trouble.nvim"
+    use "folke/lsp-colors.nvim"
+    use "lukas-reineke/indent-blankline.nvim"
+    use "kyazdani42/nvim-tree.lua"
+    use "lewis6991/gitsigns.nvim"
+    --use "akinsho/nvim-bufferline.lua" -- disable tabs for now
+    -- telescope
+    use "nvim-lua/popup.nvim"
+    use "nvim-lua/plenary.nvim"
+    use "nvim-telescope/telescope.nvim"
+    -- optimisation
+    use "lewis6991/impatient.nvim"
+    use "nathom/filetype.nvim"
+    use "dstein64/vim-startuptime"
+    -- misc
+    use "windwp/nvim-autopairs"
+    use "tpope/vim-sleuth"
+    --use "fatih/vim-go" -- You served me well, I"ll never forget you
+end)
 
 -- Plugin-specific settings
 require("plugins.misc")

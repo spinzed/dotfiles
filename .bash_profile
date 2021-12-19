@@ -21,6 +21,8 @@ export VSCODE_GALLERY_ITEM_URL='https://marketplace.visualstudio.com/items'
 export VSCODE_GALLERY_CONTROL_URL=''
 export VSCODE_GALLERY_RECOMMENDATIONS_URL=''
 
+# Firefox environmental variables
+export MOZ_WEBRENDER=1
 
 # Make discrete graphics the default OpenGL renderer
 # IT SHOULD DEFINITELY NOT BE DONE THIS WAY.
