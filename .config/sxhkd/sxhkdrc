@@ -11,6 +11,9 @@ super + {_,shift + }Return
 super + d
     rofi -show drun -modi drun,run,window,ssh -config '~/.config/rofi/config.rasi' -theme '~/.config/rofi/theme.rasi' -font 'Monospace 18' -show-icons
 
+super + a
+    rofi -show ssh -modi ssh,drun,run,window -config '~/.config/rofi/config.rasi' -theme '~/.config/rofi/theme.rasi' -font 'Monospace 18' -show-icons
+
 super + x
     rofi -show window -modi window,drun,run,ssh -config '~/.config/rofi/config.rasi' -theme '~/.config/rofi/theme.rasi' -font 'Monospace 18' -show-icons
 
@@ -38,7 +41,6 @@ super + shift + F12
 # I've rebound it just in case
 ctrl + alt + BackSpace
     killall Xorg
-
 
 #
 # bspwm hotkeys

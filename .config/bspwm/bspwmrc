@@ -27,18 +27,21 @@ if ! [ "$(pgrep -x sxhkd)" ]; then
     picom --config ~/.config/picom/picom.conf --experimental-backends &
 
     # Set the background wallpaper with feh
-    feh --no-feh-bg --bg-scale ~/Pictures/wallpaper.jpg &
+    feh --no-fehbg --bg-scale ~/Pictures/wallpaper.jpg &
 
     # Update the betterlockscreen image cache
     betterlockscreen -u Pictures/wallpaper.jpg &
 
     # Startup apps
-    if ! [ -x "$(command -v discord-canary)" ]; then
+    if [ -x "$(command -v discord-canary)" ]; then
         discord-canary &
     else
         discord & 
     fi
     firefox &
+
+    # Launch the script that connects this machine to my server via ssh
+    # reverse_ssh &
 else
     # Sending SIGUSR1 to sxhkd may sometimes mess it up, this is more reliable
     killall sxhkd; sxhkd &

@@ -18,8 +18,9 @@
 
 -- Coloring and syntax highlighting
 vim.opt.colorcolumn = "100"
-vim.g.onedark_transparent_background = true
-require('onedark').setup{}
+require("onedark").setup{
+    transparent = true
+}
 vim.cmd "highlight Comment ctermfg=cyan guifg=#30a58e"
 
 -- Indent blankline settings
