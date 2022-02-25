@@ -9,9 +9,9 @@ require("packer").startup(function()
     -- lsp and treesitter
     use "neovim/nvim-lspconfig"
     use {"nvim-treesitter/nvim-treesitter", run = ":TSUpdate"}
-    use "glepnir/lspsaga.nvim"
     use "github/copilot.vim"
     use "onsails/lspkind-nvim"
+    use "ray-x/lsp_signature.nvim"
     -- cmp
     use "hrsh7th/cmp-nvim-lsp"
     use "hrsh7th/cmp-buffer"
@@ -35,18 +35,19 @@ require("packer").startup(function()
     use "nvim-lua/popup.nvim"
     use "nvim-lua/plenary.nvim"
     use "nvim-telescope/telescope.nvim"
-    -- optimisation
+    -- optimization
     use "lewis6991/impatient.nvim"
     use "nathom/filetype.nvim"
     use "dstein64/vim-startuptime"
     -- misc
     use "windwp/nvim-autopairs"
     use "tpope/vim-sleuth"
-    --use "fatih/vim-go" -- You served me well, I"ll never forget you
+    use 'mfussenegger/nvim-jdtls'
 end)
 
 -- Plugin-specific settings
-require("plugins.misc")
-require("plugins.cmp")
 require("plugins.lsp")
+require("plugins.cmp")
+require("plugins.misc")
+require("plugins.jdtls")
 

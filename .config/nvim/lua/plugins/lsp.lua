@@ -52,7 +52,7 @@ end
 vim.api.nvim_command("autocmd BufWritePre *.go lua goimports(500)")
 vim.api.nvim_command("autocmd BufWritePre * lua vim.lsp.buf.formatting_sync(nil, 1000)")
 
--- Python's language server
+-- Python language server
 lsp.pyright.setup{}
 
 -- TS language server. Works w/ JS & React too
@@ -60,4 +60,13 @@ lsp.tsserver.setup{}
 
 -- C/Cpp language server. This is clang LS, but should work pretty well with gcc
 lsp.clangd.setup{}
+
+-- Java language server
+lsp.jdtls.setup {
+    cmd = { 'jdtls' },
+    root_dir = function(fname)
+        return require'lspconfig'.util.root_pattern('pom.xml', 'gradle.build', '.git')(fname) or vim.fn.getcwd()
+    end
+}
+--lsp.jdtls.setup{}
 

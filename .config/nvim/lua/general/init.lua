@@ -9,7 +9,7 @@ local opt = vim.opt  -- to set options
 
 
 -- General
---cmd "syntax on" // for some reason, doesn't work with filetype.nvim
+--cmd "syntax on" -- for some reason, doesn't work with filetype.nvim
 g.mapleader = " "
 opt.encoding = "utf-8"
 opt.wildmode = {"longest", "list", "full"}

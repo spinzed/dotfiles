@@ -11,6 +11,7 @@ export BROWSER="firefox"
 export GOPATH="$HOME/go"
 export PATH="$PATH:$GOPATH/bin"
 export NODE_PATH="/usr/local/bin"
+export JAVA_HOME="/usr/lib/jvm/default-runtime"
 export HISTCONTROL=ignoreboth
 export SCREENSHOTDIR="$HOME/Pictures/Screenshots"
 
@@ -21,14 +22,8 @@ export VSCODE_GALLERY_ITEM_URL='https://marketplace.visualstudio.com/items'
 export VSCODE_GALLERY_CONTROL_URL=''
 export VSCODE_GALLERY_RECOMMENDATIONS_URL=''
 
-# Firefox environmental variables
+# Firefox environmental variables. Should be the default since ff96 though
 export MOZ_WEBRENDER=1
-
-# Make discrete graphics the default OpenGL renderer
-# IT SHOULD DEFINITELY NOT BE DONE THIS WAY.
-#export __NV_PRIME_RENDER_OFFLOAD=1
-#export __VK_LAYER_NV_optimus=NVIDIA_only
-#export __GLX_VENDOR_LIBRARY_NAME=nvidia
 
 # Start Xorg if not started already
 if [ "$(tty)" = "/dev/tty1" ]; then

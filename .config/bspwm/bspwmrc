@@ -90,7 +90,7 @@ bspc config presel_feedback_color "#000000" # nmp sta je ovo
 
 #bspc config top_padding 32
 bspc config window_gap 20
-bspc config border_width 2
+bspc config border_width 1
 
 # Rules for certain applications
 bspc rule -a firefox desktop=^1

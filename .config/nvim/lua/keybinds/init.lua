@@ -34,45 +34,20 @@ map("", "<C-p>", ":Telescope find_files<CR>", {silent = true})
 map("", "<C-m>", ":TroubleToggle<CR>", {silent = true})
 
 -- lsp
-map("", "gr",        "<cmd>lua vim.lsp.buf.references()<CR>",       {silent = true})
+map("", "gt",        "<cmd>lua vim.lsp.buf.references()<CR>",       {silent = true})
 map("", "gd",        "<cmd>lua vim.lsp.buf.definition()<CR>",       {silent = true})
 map("", "gD",        "<cmd>lua vim.lsp.buf.declaration()<CR>",      {silent = true})
 map("", "gi",        "<cmd>lua vim.lsp.buf.implementation()<CR>",   {silent = true})
---map("", "<S-K>",     "<cmd>lua vim.lsp.buf.hover()<CR>",            {silent = true})
---map("", "<C-k>",     "<cmd>lua vim.lsp.buf.signature_help()<CR>",   {silent = true})
---map("", "<C-n>",     "<cmd>lua vim.lsp.diagnostic.goto_next()<CR>", {silent = true})
---map("", "<C-l>",     "<cmd>lua vim.lsp.diagnostic.goto_prev()<CR>", {silent = true})
---map("", "<leader>r", "<cmd>lua vim.lsp.buf.rename()<CR>",           {silent = true})
---map("", "<F2>",      "<cmd>lua vim.lsp.buf.rename()<CR>",           {silent = true})
+map("", "gr",        "<cmd>lua vim.lsp.buf.code_action()<CR>",      {silent = true})
+map("", "<F2>",      "<cmd>lua vim.lsp.buf.code_action()<CR>",      {silent = true})
+map("", "<S-k>",     "<cmd>lua vim.lsp.buf.hover()<CR>",            {silent = true})
+map("", "<C-k>",     "<cmd>lua vim.lsp.buf.signature_help()<CR>",   {silent = true})
+map("", "<C-n>",     "<cmd>lua vim.diagnostic.goto_next()<CR>",     {silent = true})
+map("", "<C-l>",     "<cmd>lua vim.diagnostic.goto_prev()<CR>",     {silent = true})
+map("", "<leader>r", "<cmd>lua vim.lsp.buf.rename()<CR>",           {silent = true})
+map("", "<F2>",      "<cmd>lua vim.lsp.buf.rename()<CR>",           {silent = true})
 map("", "<leader>c", "<cmd>lua vim.lsp.buf.code_action()<CR>",      {silent = true})
 map("", "<leader>t", "<cmd>lua vim.lsp.buf.type_definition()<CR>",  {silent = true})
-
--- lspsaga
-map("", "gh",        "<cmd>lua require('lspsaga.provider').lsp_finder()<CR>",                 {silent = true}) -- or :Lspsaga lsp_finder
-map("", "gs",        "<cmd>lua require('lspsaga.signaturehelp').signature_help()<CR>",        {silent = true}) -- or :Lspsaga signature_help
-map("", "gr",        "<cmd>lua require('lspsaga.rename').rename()<CR>",                       {silent = true}) -- or :Lspsaga rename
-map("", "<F2>",      "<cmd>lua require('lspsaga.rename').rename()<CR>",                       {silent = true}) -- or :Lspsaga rename
-map("", "<leader>d", "<cmd>lua require('lspsaga.provider').preview_definition()<CR>",         {silent = true}) -- or :Lspsaga preview_definition
---map("", "<leader>c", "<cmd>lua require('lspsaga.codeaction').code_action()<CR>",              {silent = true}) -- or :Lspsaga code_action
---map("", "<leader>c", ":<C-U>lua require('lspsaga.codeaction').range_code_action()<CR>",       {silent = true}) -- or :Lspsaga range_code_action
-map("", "<S-K>",     "<cmd>lua require('lspsaga.hover').render_hover_doc()<CR>",              {silent = true}) -- or :Lspsaga hover_doc
-map("", "<C-n>",     "<cmd>lua require('lspsaga.diagnostic').lsp_jump_diagnostic_next()<CR>", {silent = true}) -- or :Lspsaga diagnostic_jump_next
-map("", "<C-l>",     "<cmd>lua require('lspsaga.diagnostic').lsp_jump_diagnostic_prev()<CR>", {silent = true}) -- or :Lspsaga diagnostic_jump_previous
-map("", "<C-J>",     "<cmd>lua require('lspsaga.action').smart_scroll_with_saga(1)<CR>",      {silent = true})
-map("", "<C-K>",     "<cmd>lua require('lspsaga.action').smart_scroll_with_saga(-1)<CR>",     {silent = true})
-
----- compe
---map("i", "<C-Space>", "compe#complete()",              {silent = true, expr = true})
---map("i", "<C-e>",     "compe#close('<C-e>')",          {silent = true, expr = true})
---map("i", "<CR>",      "compe#confirm('<CR>')",         {silent = true, expr = true})
---map("i", "<C-f>",     "compe#scroll({ 'delta': +4 })", {silent = true, expr = true})
---map("i", "<C-d>",     "compe#scroll({ 'delta': -4 })", {silent = true, expr = true})
---map("i", "<C-j>",     "v:lua.tab_complete()",          {expr = true})
---map("i", "<C-k>",     "v:lua.s_tab_complete()",        {expr = true})
---map("i", "<Tab>",     "v:lua.tab_complete()",          {expr = true})
---map("i", "<S-Tab>",   "v:lua.s_tab_complete()",        {expr = true})
---map("s", "<Tab>",     "v:lua.tab_complete()",          {expr = true})
---map("s", "<S-Tab>",   "v:lua.s_tab_complete()",        {expr = true})
 
 -- nvim tree
 map("n", "<leader>e", ":NvimTreeToggle<CR>",   {silent = true})

@@ -1,24 +1,6 @@
 -- misc
 
 
--- netrw
-vim.g.netrw_banner = 0
-vim.g.netrw_liststyle = 3
-vim.g.netrw_browse_split = 4
-vim.g.netrw_winsize = 20
-vim.g.netrw_preview = 1
-vim.g.netrw_list_hide= ".git"
-
--- vim-go
-vim.g.go_fmt_autosave = 1
-vim.g.go_fmt_command = "gopls" -- the default, other option are gofmt and goimports
-
-vim.g.go_rename_command = "gopls" -- vim.g.go_gopls_staticcheck = v:null vim.g.go_gopls_staticcheck = 1
-vim.g.go_metalinter_command = "golangci-lint"
-vim.g.go_metalinter_autosave = 1
-vim.g.go_metalinter_enabled = {"gosimple", "staticcheck", "typecheck", "unused", "varcheck"}
-vim.g.go_metalinter_autosave_enabled = {"gosimple", "staticcheck", "typecheck", "unused", "varcheck"}
-
 -- copilot
 vim.b.copilot_enabled = 0
 
@@ -28,8 +10,13 @@ require("nvim-treesitter.configs").setup{
     highlight = {enable = true}
 }
 
--- lsp-saga - fancy windows for lsp things
-require("lspsaga").init_lsp_saga{}
+-- lsp_signature
+require("lsp_signature").setup({
+    floating_window = true,
+    handler_opts = {
+        border = "none"
+    },
+})
 
 -- trouble -- vscode like error showing
 require("trouble").setup{}
