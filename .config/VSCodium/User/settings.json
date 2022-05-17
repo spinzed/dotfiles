@@ -1,9 +1,7 @@
 {
-    "terminal.integrated.shell.windows": "C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\powershell.exe",
     "C_Cpp.default.cppStandard": "c++17",
     "C_Cpp.default.cStandard": "c11",
     "C_Cpp.default.intelliSenseMode": "gcc-x64",
-    "gitlens.views.compare.location": "explorer",
     "git.confirmSync": false,
     "git.enableSmartCommit": true,
     "python.pythonPath": "/bin/python",
@@ -71,11 +69,9 @@
     "javascript.preferences.quoteStyle": "double",
     "typescript.preferences.quoteStyle": "double",
     "diffEditor.ignoreTrimWhitespace": false,
-    "materialTheme.accent": "Remove accents",
     "editor.smoothScrolling": true,
     "terminal.explorerKind": "external",
     "terminal.external.linuxExec": "/bin/sh",
-    "terminal.integrated.shell.linux": "/bin/bash",
     "workbench.iconTheme": "material-icon-theme",
     "files.associations": {
     
@@ -101,5 +97,8 @@
     },
     "java.configuration.runtimes": [
         
-    ]
+    ],
+    "omnisharp.path": "latest",
+    "workbench.list.smoothScrolling": true,
+    "omnisharp.useGlobalMono": "always"
 }

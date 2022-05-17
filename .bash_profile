@@ -24,10 +24,22 @@ export VSCODE_GALLERY_RECOMMENDATIONS_URL=''
 
 # Firefox environmental variables. Should be the default since ff96 though
 export MOZ_WEBRENDER=1
+export MOZ_ENABLE_WAYLAND=1
+
+# Wayland related
+export GBM_BACKEND=nvidia-drm
+export __GLX_VENDOR_LIBRARY_NAME=nvidia
+export _JAVA_AWT_WM_NONREPARENTING=1
+
+# These were moved from .xinitrc so that they work with x sessions that
+# haven't been started with startx
+xset r rate 250 50
+setxkbmap -option caps:escape_shifted_capslock # bind Caps Lock to ESC and shift + Caps Lock to Caps Lock
 
 # Start Xorg if not started already
 if [ "$(tty)" = "/dev/tty1" ]; then
-	pgrep -x Xorg || exec startx
+	#pgrep -x Xorg || exec startx
+	echo placeholder
 fi
 
 # Call .bashrc on login shell
