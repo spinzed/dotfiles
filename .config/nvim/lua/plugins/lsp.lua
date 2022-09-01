@@ -3,7 +3,7 @@
 
 local lsp = require("lspconfig")
 
--- Go's language server
+-- Go language server
 lsp.gopls.setup{
     cmd = {"gopls", "serve"},
     settings = {

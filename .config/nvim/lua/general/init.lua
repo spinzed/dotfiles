@@ -26,6 +26,7 @@ opt.smartcase = true -- search ignores case if everything is lowercase
 opt.swapfile = false -- disable swapfiles (looking for replacement)
 opt.undofile = true
 opt.termguicolors = true -- needed for bufferline
+opt.mouse = "a"
 
 -- Tabs and indenting
 opt.tabstop = 4
@@ -33,6 +34,8 @@ opt.softtabstop = 4 -- tab and space indent width
 opt.shiftwidth = 4 -- indent on newline
 opt.expandtab = true -- convert tabs to spaces
 opt.autoindent = true -- apparently, smartindent is a no-no
+opt.cindent = true
+cmd "filetype indent on"
 cmd "filetype plugin indent on"
 
 -- Change indents for js and ts to 2 spaces

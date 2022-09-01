@@ -20,7 +20,7 @@ require("packer").startup(function()
     use "hrsh7th/nvim-cmp"
     use "hrsh7th/cmp-vsnip"
     use "hrsh7th/vim-vsnip"
-    use 'golang/vscode-go'
+    use "golang/vscode-go"
     -- themes & visuals
     use "kyazdani42/nvim-web-devicons"
     use "hoob3rt/lualine.nvim"
@@ -30,11 +30,12 @@ require("packer").startup(function()
     use "lukas-reineke/indent-blankline.nvim"
     use "kyazdani42/nvim-tree.lua"
     use "lewis6991/gitsigns.nvim"
-    --use "akinsho/nvim-bufferline.lua" -- disable tabs for now
+    use "akinsho/bufferline.nvim"
     -- telescope
     use "nvim-lua/popup.nvim"
     use "nvim-lua/plenary.nvim"
     use "nvim-telescope/telescope.nvim"
+    use "nvim-telescope/telescope-ui-select.nvim"
     -- optimization
     use "lewis6991/impatient.nvim"
     use "nathom/filetype.nvim"
@@ -42,12 +43,11 @@ require("packer").startup(function()
     -- misc
     use "windwp/nvim-autopairs"
     use "tpope/vim-sleuth"
-    use 'mfussenegger/nvim-jdtls'
+    use {"akinsho/flutter-tools.nvim", requires = "nvim-lua/plenary.nvim"}
 end)
 
 -- Plugin-specific settings
 require("plugins.lsp")
 require("plugins.cmp")
 require("plugins.misc")
-require("plugins.jdtls")
 

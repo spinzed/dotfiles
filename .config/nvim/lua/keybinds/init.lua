@@ -31,23 +31,22 @@ map("t", "<ESC>", "<C-\\><C-n>")
 map("", "<C-p>", ":Telescope find_files<CR>", {silent = true})
 
 -- trouble
-map("", "<C-m>", ":TroubleToggle<CR>", {silent = true})
+map("", "<C-b>", ":TroubleToggle<CR>", {silent = true})
 
 -- lsp
-map("", "gt",        "<cmd>lua vim.lsp.buf.references()<CR>",       {silent = true})
+map("", "gr",        "<cmd>lua vim.lsp.buf.references()<CR>",       {silent = true})
 map("", "gd",        "<cmd>lua vim.lsp.buf.definition()<CR>",       {silent = true})
 map("", "gD",        "<cmd>lua vim.lsp.buf.declaration()<CR>",      {silent = true})
 map("", "gi",        "<cmd>lua vim.lsp.buf.implementation()<CR>",   {silent = true})
-map("", "gr",        "<cmd>lua vim.lsp.buf.code_action()<CR>",      {silent = true})
-map("", "<F2>",      "<cmd>lua vim.lsp.buf.code_action()<CR>",      {silent = true})
+map("", "gl",        "<cmd>lua vim.lsp.buf.code_action()<CR>",      {silent = true})
+map("", "gc",        "<cmd>lua vim.lsp.buf.code_action()<CR>",      {silent = true})
+map("", "gt",        "<cmd>lua vim.lsp.buf.type_definition()<CR>",  {silent = true})
 map("", "<S-k>",     "<cmd>lua vim.lsp.buf.hover()<CR>",            {silent = true})
 map("", "<C-k>",     "<cmd>lua vim.lsp.buf.signature_help()<CR>",   {silent = true})
 map("", "<C-n>",     "<cmd>lua vim.diagnostic.goto_next()<CR>",     {silent = true})
 map("", "<C-l>",     "<cmd>lua vim.diagnostic.goto_prev()<CR>",     {silent = true})
 map("", "<leader>r", "<cmd>lua vim.lsp.buf.rename()<CR>",           {silent = true})
 map("", "<F2>",      "<cmd>lua vim.lsp.buf.rename()<CR>",           {silent = true})
-map("", "<leader>c", "<cmd>lua vim.lsp.buf.code_action()<CR>",      {silent = true})
-map("", "<leader>t", "<cmd>lua vim.lsp.buf.type_definition()<CR>",  {silent = true})
 
 -- nvim tree
 map("n", "<leader>e", ":NvimTreeToggle<CR>",   {silent = true})
