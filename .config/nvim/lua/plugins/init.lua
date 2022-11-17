@@ -31,16 +31,16 @@ require("packer").startup(function()
     use "kyazdani42/nvim-tree.lua"
     use "lewis6991/gitsigns.nvim"
     use "akinsho/bufferline.nvim"
-    -- telescope
+  -- telescope
     use "nvim-lua/popup.nvim"
     use "nvim-lua/plenary.nvim"
     use "nvim-telescope/telescope.nvim"
     use "nvim-telescope/telescope-ui-select.nvim"
-    -- optimization
+  -- optimization
     use "lewis6991/impatient.nvim"
     use "nathom/filetype.nvim"
     use "dstein64/vim-startuptime"
-    -- misc
+  -- misc
     use "windwp/nvim-autopairs"
     use "tpope/vim-sleuth"
     use {"akinsho/flutter-tools.nvim", requires = "nvim-lua/plenary.nvim"}

@@ -6,7 +6,7 @@
 export PATH="$PATH:$HOME/.local/bin:$HOME/Scripts"
 export EDITOR="/bin/nvim"
 export VISUAL="/bin/nvim"
-export TERMINAL="konsole"
+export TERMINAL="gnome-terminal"
 export BROWSER="firefox"
 export CHROME_EXECUTABLE="google-chrome-stable"
 export GOPATH="$HOME/go"
@@ -27,7 +27,10 @@ export VSCODE_GALLERY_RECOMMENDATIONS_URL=''
 export MOZ_WEBRENDER=1
 export MOZ_ENABLE_WAYLAND=1
 
-# Wayland related
+# Wayland & nvidia related
+export LIBVA_DRIVER_NAME=nvidia
+export MOZ_DISABLE_RDD_SANDBOX=1
+export EGL_PLATFORM=wayland
 export GBM_BACKEND=nvidia-drm
 export __GLX_VENDOR_LIBRARY_NAME=nvidia
 export _JAVA_AWT_WM_NONREPARENTING=1
@@ -35,7 +38,7 @@ export _JAVA_AWT_WM_NONREPARENTING=1
 # These were moved from .xinitrc so that they work with x sessions that
 # haven't been started with startx
 xset r rate 250 50
-setxkbmap -option caps:escape_shifted_capslock # bind Caps Lock to ESC and shift + Caps Lock to Caps Lock
+setxkbmap -option caps:escape_shifted_capslock
 
 # Start Xorg if not started already
 if [ "$(tty)" = "/dev/tty1" ]; then

@@ -18,7 +18,7 @@ shopt -s checkwinsize # Prevent terminal from messing up after commands. On by d
 # Aliases
 alias ls="ls --color=auto --group-directories-first"
 alias grep="grep --color=auto"
-alias la="ls -lah"
+alias la="ls -lahv"
 alias s="sudo"
 alias fuck='sudo $(history -p !!)'
 alias p="sudo pacman"
@@ -33,6 +33,9 @@ alias notes="nvim ~/.notes"
 alias code="vscodium"
 alias xorg="s -e /etc/X11/xorg.conf" # Believe me, this was necessary...
 alias dotconf='git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
+alias :q="exit"
+alias :qa=":q"
+alias chmar="chmod"
 
 #dotconf config --local status.showUntrackedFiles no # disable viewing of untracked files
 

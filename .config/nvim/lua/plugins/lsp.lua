@@ -34,7 +34,7 @@ function OrgImports(wait_ms)
 
 -- Using lua tell vimscript to call the lua function with timeout of 1000 ms
 vim.api.nvim_command("autocmd BufWritePre *.go lua OrgImports(1000)")
-vim.api.nvim_command("autocmd BufWritePre * lua vim.lsp.buf.formatting_sync(nil, 1000)")
+--vim.api.nvim_command("autocmd BufWritePre * lua vim.lsp.buf.format(nil, 1000)")
 
 -- Python language server
 lsp.pyright.setup{}
