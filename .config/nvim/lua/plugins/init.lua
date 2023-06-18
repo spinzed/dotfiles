@@ -1,50 +1,59 @@
 -- Plugins
 
 
-vim.cmd "packadd packer.nvim"
+local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
+if not vim.loop.fs_stat(lazypath) then
+  vim.fn.system({
+    "git",
+    "clone",
+    "--filter=blob:none",
+    "https://github.com/folke/lazy.nvim.git",
+    "--branch=stable", -- latest stable release
+    lazypath,
+  })
+end
+vim.opt.rtp:prepend(lazypath)
 
-require("packer").startup(function()
-    use "wbthomason/packer.nvim"
-
-    -- lsp and treesitter
-    use "neovim/nvim-lspconfig"
-    use {"nvim-treesitter/nvim-treesitter", run = ":TSUpdate"}
-    use "github/copilot.vim"
-    use "onsails/lspkind-nvim"
-    use "ray-x/lsp_signature.nvim"
-    -- cmp
-    use "hrsh7th/cmp-nvim-lsp"
-    use "hrsh7th/cmp-buffer"
-    use "hrsh7th/cmp-path"
-    use "hrsh7th/cmp-cmdline"
-    use "hrsh7th/nvim-cmp"
-    use "hrsh7th/cmp-vsnip"
-    use "hrsh7th/vim-vsnip"
-    use "golang/vscode-go"
-    -- themes & visuals
-    use "kyazdani42/nvim-web-devicons"
-    use "hoob3rt/lualine.nvim"
-    use "navarasu/onedark.nvim"
-    use "folke/trouble.nvim"
-    use "folke/lsp-colors.nvim"
-    use "lukas-reineke/indent-blankline.nvim"
-    use "kyazdani42/nvim-tree.lua"
-    use "lewis6991/gitsigns.nvim"
-    use "akinsho/bufferline.nvim"
+require("lazy").setup({
+  -- lsp and treesitter
+  "neovim/nvim-lspconfig",
+  {"nvim-treesitter/nvim-treesitter", build = ":TSUpdate"},
+  "github/copilot.vim",
+  "onsails/lspkind-nvim",
+  "ray-x/lsp_signature.nvim",
+  -- cmp
+  "hrsh7th/cmp-nvim-lsp",
+  "hrsh7th/cmp-buffer",
+  "hrsh7th/cmp-path",
+  "hrsh7th/cmp-cmdline",
+  "hrsh7th/nvim-cmp",
+  "hrsh7th/cmp-vsnip",
+  "hrsh7th/vim-vsnip",
+  "golang/vscode-go",
+  -- themes & visuals
+  { "kyazdani42/nvim-web-devicons", lazy = true },
+  "hoob3rt/lualine.nvim",
+  "navarasu/onedark.nvim",
+  "folke/trouble.nvim",
+  "folke/lsp-colors.nvim",
+  "lukas-reineke/indent-blankline.nvim",
+  "kyazdani42/nvim-tree.lua",
+  "lewis6991/gitsigns.nvim",
+  "akinsho/bufferline.nvim",
   -- telescope
-    use "nvim-lua/popup.nvim"
-    use "nvim-lua/plenary.nvim"
-    use "nvim-telescope/telescope.nvim"
-    use "nvim-telescope/telescope-ui-select.nvim"
+  "nvim-lua/popup.nvim",
+  "nvim-lua/plenary.nvim",
+  "nvim-telescope/telescope.nvim",
+  "nvim-telescope/telescope-ui-select.nvim",
   -- optimization
-    use "lewis6991/impatient.nvim"
-    use "nathom/filetype.nvim"
-    use "dstein64/vim-startuptime"
+  "lewis6991/impatient.nvim",
+  -- "nathom/filetype.nvim"
+  "dstein64/vim-startuptime",
   -- misc
-    use "windwp/nvim-autopairs"
-    use "tpope/vim-sleuth"
-    use {"akinsho/flutter-tools.nvim", requires = "nvim-lua/plenary.nvim"}
-end)
+  "windwp/nvim-autopairs",
+  "tpope/vim-sleuth",
+  {"akinsho/flutter-tools.nvim", dependencies = { "nvim-lua/plenary.nvim" }},
+})
 
 -- Plugin-specific settings
 require("plugins.lsp")

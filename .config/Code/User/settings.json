@@ -1,0 +1,128 @@
+{
+  "files.exclude": {
+      "**/.classpath": true,
+      "**/.project": true,
+      "**/.settings": true,
+      "**/.factorypath": true
+  },
+  "keyboard.dispatch": "keyCode",
+  "editor.minimap.enabled": false,
+  "window.zoomLevel": 1,
+  "workbench.colorTheme": "Catppuccin Macchiato",
+  "vim.handleKeys": {
+
+      "<C-d>": false,
+      "<C-s>": false,
+      "<C-z>": true
+  },
+  "vim.normalModeKeyBindingsNonRecursive": [
+      {
+        "before": [
+          "u"
+        ],
+        "commands": [
+          "undo"
+        ]
+      },
+      {
+        "before": [
+          "c-r"
+        ],
+        "commands": [
+          "redo"
+        ]
+      }
+  ],
+  "workbench.iconTheme": "vscode-icons",
+  "git.confirmSync": false,
+  "git.enableSmartCommit": true,
+  "files.autoSave": "onFocusChange",
+  "terminal.external.windowsExec": "C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\powershell.exe",
+  "editor.acceptSuggestionOnEnter": "smart",
+  "workbench.sideBar.location": "left",
+  "window.menuBarVisibility": "compact",
+  "explorer.confirmDelete": false,
+  "git.autofetch": true,
+  "debug.openDebug": "neverOpen",
+  "workbench.statusBar.visible": true,
+  "breadcrumbs.enabled": true,
+  "explorer.confirmDragAndDrop": false,
+  "workbench.startupEditor": "newUntitledFile",
+  "liveshare.featureSet": "insiders",
+  "javascript.updateImportsOnFileMove.enabled": "always",
+  "editor.acceptSuggestionOnCommitCharacter": false,
+  "[javascript]": {
+      "editor.defaultFormatter": "vscode.typescript-language-features"
+  },
+  "[html]": {
+      "editor.defaultFormatter": "vscode.html-language-features"
+  },
+  "workbench.tree.indent": 20,
+  "editor.fastScrollSensitivity": 3,
+  "[json]": {
+      "editor.defaultFormatter": "vscode.json-language-features"
+  },
+  "vsicons.dontShowNewVersionMessage": true,
+  "editor.suggestSelection": "first",
+  "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
+  "[typescript]": {
+      "editor.defaultFormatter": "vscode.typescript-language-features"
+  },
+  "[jsonc]": {
+      "editor.defaultFormatter": "vscode.json-language-features"
+  },
+  "[typescriptreact]": {
+      "editor.defaultFormatter": "vscode.typescript-language-features"
+  },
+  "typescript.updateImportsOnFileMove.enabled": "always",
+  "editor.tokenColorCustomizations": { "comments": "#229977" },
+  "workbench.colorCustomizations": {
+      "editorError.foreground": "#ff0000",
+      "editorWarning.foreground": "#ccc919",
+      "editorInfo.foreground": "#8383c0"
+  },
+  "javascript.preferences.quoteStyle": "double",
+  "typescript.preferences.quoteStyle": "double",
+  "diffEditor.ignoreTrimWhitespace": false,
+  "editor.smoothScrolling": true,
+  "terminal.explorerKind": "external",
+  "terminal.external.linuxExec": "/bin/sh",
+  "files.associations": {
+  
+  },
+  "go.useLanguageServer": true,
+  "editor.multiCursorModifier": "ctrlCmd",
+  "vim.enableNeovim": true,
+  "vim.neovimPath": "/bin/nvim",
+  "launch": {
+      "configurations": [],
+      "compounds": []
+  },
+  "css.lint.unknownAtRules": "ignore",
+  "workbench.editor.untitled.hint": "hidden",
+  "java.configuration.runtimes": [
+      
+  ],
+  "workbench.list.smoothScrolling": true,
+  "[dart]": {
+      "editor.formatOnSave": true,
+      "editor.formatOnType": true,
+      "editor.rulers": [
+          80
+      ],
+      "editor.selectionHighlight": false,
+      "editor.suggest.snippetsPreventQuickSuggestions": false,
+      "editor.suggestSelection": "first",
+      "editor.tabCompletion": "onlySnippets",
+      "editor.wordBasedSuggestions": false
+  },
+  "editor.codeActionsOnSave": {
+  
+  },
+  "liveServer.settings.donotShowInfoMsg": true,
+  "liveServer.settings.donotVerifyTags": true,
+  "[python]": {
+    "editor.formatOnType": true
+  },
+  "redhat.telemetry.enabled": true,
+}

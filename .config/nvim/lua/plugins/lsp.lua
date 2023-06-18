@@ -17,24 +17,22 @@ lsp.gopls.setup{
 }
 
 -- Helper function to run goimports on save. Not part of lsp
-function OrgImports(wait_ms)
+function go_org_imports(wait_ms)
     local params = vim.lsp.util.make_range_params()
     params.context = {only = {"source.organizeImports"}}
     local result = vim.lsp.buf_request_sync(0, "textDocument/codeAction", params, wait_ms)
-    for _, res in pairs(result or {}) do
-      for _, r in pairs(res.result or {}) do
-        if r.edit then
-          vim.lsp.util.apply_workspace_edit(r.edit, "UTF-8")
-        else
-          vim.lsp.buf.execute_command(r.command)
+    for cid, res in pairs(result or {}) do
+        for _, r in pairs(res.result or {}) do
+            if r.edit then
+                local enc = (vim.lsp.get_client_by_id(cid) or {}).offset_encoding or "utf-16"
+                vim.lsp.util.apply_workspace_edit(r.edit, enc)
+            end
         end
-      end
     end
-  end
-
+end
 -- Using lua tell vimscript to call the lua function with timeout of 1000 ms
-vim.api.nvim_command("autocmd BufWritePre *.go lua OrgImports(1000)")
---vim.api.nvim_command("autocmd BufWritePre * lua vim.lsp.buf.format(nil, 1000)")
+vim.api.nvim_command("autocmd BufWritePre *.go lua go_org_imports(1000)")
+vim.api.nvim_command("autocmd BufWritePre * lua vim.lsp.buf.format(nil, 1000)")
 
 -- Python language server
 lsp.pyright.setup{}
@@ -43,7 +41,7 @@ lsp.pyright.setup{}
 lsp.tsserver.setup{}
 
 -- C/Cpp language server. This is clang LS, but should work pretty well with gcc
-lsp.clangd.setup{}
+lsp.clangd.setup{ capabilities = { offsetEncoding = "utf-8" } }
 
 -- Java language server
 lsp.jdtls.setup {
