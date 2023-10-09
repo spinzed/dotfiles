@@ -40,6 +40,7 @@ require("nvim-autopairs").setup{}
 
 -- This is your opts table
 require("telescope").setup {
+  defaults = { file_ignore_patterns = { "node%_modules/.*" } },
   extensions = {
     ["ui-select"] = {
       require("telescope.themes").get_dropdown {

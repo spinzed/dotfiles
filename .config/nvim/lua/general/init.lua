@@ -27,6 +27,7 @@ opt.swapfile = false -- disable swapfiles (looking for replacement)
 opt.undofile = true
 opt.termguicolors = true -- needed for bufferline
 opt.mouse = "a"
+vim.loader.enable()
 
 -- Tabs and indenting
 opt.tabstop = 4
@@ -37,6 +38,10 @@ opt.autoindent = true -- apparently, smartindent is a no-no
 opt.cindent = true
 cmd "filetype indent on"
 cmd "filetype plugin indent on"
+
+-- Disable netrw
+g.loaded_netrw = 1
+g.loaded_netrwPlugin = 1
 
 -- Change indents for js and ts to 2 spaces
 vim.api.nvim_command("autocmd Filetype javascript,typescript setlocal tabstop=2 softtabstop=2 shiftwidth=2")

@@ -31,22 +31,33 @@ require("lazy").setup({
   "hrsh7th/vim-vsnip",
   "golang/vscode-go",
   -- themes & visuals
-  { "kyazdani42/nvim-web-devicons", lazy = true },
   "hoob3rt/lualine.nvim",
   "navarasu/onedark.nvim",
   "folke/trouble.nvim",
   "folke/lsp-colors.nvim",
   "lukas-reineke/indent-blankline.nvim",
-  "kyazdani42/nvim-tree.lua",
+  {
+    "nvim-tree/nvim-tree.lua",
+    version = "*",
+    lazy = false,
+    dependencies = {
+      "nvim-tree/nvim-web-devicons",
+    },
+  },
   "lewis6991/gitsigns.nvim",
   "akinsho/bufferline.nvim",
+  {
+     "m4xshen/hardtime.nvim",
+     dependencies = { "MunifTanjim/nui.nvim", "nvim-lua/plenary.nvim" },
+     opts = {},
+     cond = false,
+  },
   -- telescope
   "nvim-lua/popup.nvim",
   "nvim-lua/plenary.nvim",
   "nvim-telescope/telescope.nvim",
   "nvim-telescope/telescope-ui-select.nvim",
   -- optimization
-  "lewis6991/impatient.nvim",
   -- "nathom/filetype.nvim"
   "dstein64/vim-startuptime",
   -- misc
