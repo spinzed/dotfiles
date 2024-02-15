@@ -30,12 +30,14 @@ export MOZ_WEBRENDER=1
 export MOZ_ENABLE_WAYLAND=1
 
 # Wayland & nvidia related
+export XDG_SESSION_TYPE=wayland
 export LIBVA_DRIVER_NAME=nvidia
 export MOZ_DISABLE_RDD_SANDBOX=1
-export EGL_PLATFORM=wayland
+#export EGL_PLATFORM=wayland
 export GBM_BACKEND=nvidia-drm
 export __GLX_VENDOR_LIBRARY_NAME=nvidia
 export _JAVA_AWT_WM_NONREPARENTING=1
+export NVD_BACKEND=direct
 
 # Start Xorg if not started already
 if [ "$(tty)" = "/dev/tty1" ]; then
