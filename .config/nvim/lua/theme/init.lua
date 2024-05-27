@@ -9,13 +9,6 @@ require("onedark").setup{
 require("onedark").load();
 vim.cmd "highlight Comment ctermfg=cyan guifg=#30a58e"
 
--- Indent blankline settings
- require("indent_blankline").setup {
-    -- for example, context is off by default, use this to turn it on
-    show_current_context = true,
-    show_current_context_start = true,
-}
-
 -- Bufferline
 require("bufferline").setup{
     options = {

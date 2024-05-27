@@ -98,7 +98,6 @@
       "compounds": []
   },
   "css.lint.unknownAtRules": "ignore",
-  "workbench.editor.untitled.hint": "hidden",
   "java.configuration.runtimes": [
       
   ],
@@ -113,7 +112,7 @@
       "editor.suggest.snippetsPreventQuickSuggestions": false,
       "editor.suggestSelection": "first",
       "editor.tabCompletion": "onlySnippets",
-      "editor.wordBasedSuggestions": false
+      "editor.wordBasedSuggestions": "off"
   },
   "editor.codeActionsOnSave": {
   
@@ -123,4 +122,7 @@
   "[python]": {
   },
   "redhat.telemetry.enabled": true,
+  "workbench.editor.empty.hint": "hidden",
+  "cmake.configureOnOpen": false,
+  "cmake.showOptionsMovedNotification": false,
 }

@@ -16,26 +16,31 @@ vim.opt.rtp:prepend(lazypath)
 
 require("lazy").setup({
   -- lsp and treesitter
-  "neovim/nvim-lspconfig",
+  {
+    "neovim/nvim-lspconfig",
+    --config = {},
+    --opts = {
+    --  inlay_hints = {
+    --    enabled = true,
+    --  },
+    --},
+  },
   {"nvim-treesitter/nvim-treesitter", build = ":TSUpdate"},
   "github/copilot.vim",
   "onsails/lspkind-nvim",
-  "ray-x/lsp_signature.nvim",
+  { "ray-x/lsp_signature.nvim", event = "VeryLazy", opts = {}, config = function(_, opts) require'lsp_signature'.setup(opts) end },
   -- cmp
   "hrsh7th/cmp-nvim-lsp",
   "hrsh7th/cmp-buffer",
   "hrsh7th/cmp-path",
   "hrsh7th/cmp-cmdline",
   "hrsh7th/nvim-cmp",
-  "hrsh7th/cmp-vsnip",
-  "hrsh7th/vim-vsnip",
-  "golang/vscode-go",
   -- themes & visuals
   "hoob3rt/lualine.nvim",
   "navarasu/onedark.nvim",
   "folke/trouble.nvim",
   "folke/lsp-colors.nvim",
-  "lukas-reineke/indent-blankline.nvim",
+  { "lukas-reineke/indent-blankline.nvim", main = "ibl", opts = {} },
   {
     "nvim-tree/nvim-tree.lua",
     version = "*",
@@ -46,12 +51,6 @@ require("lazy").setup({
   },
   "lewis6991/gitsigns.nvim",
   "akinsho/bufferline.nvim",
-  {
-     "m4xshen/hardtime.nvim",
-     dependencies = { "MunifTanjim/nui.nvim", "nvim-lua/plenary.nvim" },
-     opts = {},
-     cond = false,
-  },
   -- telescope
   "nvim-lua/popup.nvim",
   "nvim-lua/plenary.nvim",

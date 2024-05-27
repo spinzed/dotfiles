@@ -4,19 +4,14 @@
 -- copilot
 vim.b.copilot_enabled = 0
 
+-- indent blankline
+--require("ibl").setup()
+
 -- treesitter
 require("nvim-treesitter.configs").setup{
     ensure_installed = "all",
     highlight = {enable = true}
 }
-
--- lsp_signature
-require("lsp_signature").setup({
-    floating_window = true,
-    handler_opts = {
-        border = "none"
-    },
-})
 
 -- trouble -- vscode like error showing
 require("trouble").setup{}
