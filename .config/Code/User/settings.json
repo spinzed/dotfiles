@@ -125,4 +125,9 @@
   "workbench.editor.empty.hint": "hidden",
   "cmake.configureOnOpen": false,
   "cmake.showOptionsMovedNotification": false,
+  "cmake.pinnedCommands": [
+    "workbench.action.tasks.configureTaskRunner",
+    "workbench.action.tasks.runTask"
+  ],
+  "cmake.showConfigureWithDebuggerNotification": false,
 }

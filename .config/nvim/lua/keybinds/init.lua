@@ -47,6 +47,7 @@ map("", "<C-n>",     "<cmd>lua vim.diagnostic.goto_next()<CR>",     {silent = tr
 map("", "<C-l>",     "<cmd>lua vim.diagnostic.goto_prev()<CR>",     {silent = true})
 map("", "<leader>r", "<cmd>lua vim.lsp.buf.rename()<CR>",           {silent = true})
 map("", "<F2>",      "<cmd>lua vim.lsp.buf.rename()<CR>",           {silent = true})
+map("", "<C-A-l>",   "<cmd>lua vim.lsp.buf.format({ async = true })<CR>",           {silent = true})
 
 -- nvim tree
 map("n", "<leader>e", ":NvimTreeToggle<CR>",   {silent = true})

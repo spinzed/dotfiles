@@ -27,7 +27,6 @@ opt.swapfile = false -- disable swapfiles (looking for replacement)
 opt.undofile = true
 opt.termguicolors = true -- needed for bufferline
 opt.mouse = "a"
-vim.loader.enable()
 
 -- Tabs and indenting
 opt.tabstop = 4
@@ -39,6 +38,10 @@ opt.cindent = true
 cmd "filetype indent on"
 cmd "filetype plugin indent on"
 
+-- Language
+--vim.opt.spell = true
+vim.opt.spelllang = 'hr'
+
 -- Disable netrw
 g.loaded_netrw = 1
 g.loaded_netrwPlugin = 1
@@ -49,3 +52,5 @@ vim.api.nvim_command("autocmd Filetype javascript,typescript setlocal tabstop=2 
 -- Set default syntax highlighting
 vim.api.nvim_command("au BufNewFile,BufRead * if &syntax == '' | set syntax=config | endif")
 
+-- Faster loading times?
+vim.loader.enable()

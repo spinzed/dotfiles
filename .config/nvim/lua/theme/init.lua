@@ -2,11 +2,9 @@
 
 -- Coloring and syntax highlighting
 vim.opt.colorcolumn = "100"
-require("onedark").setup{
-    style = 'darker',
---    transparent = true
-}
-require("onedark").load();
+
+vim.cmd[[colorscheme tokyonight-night]]
+
 vim.cmd "highlight Comment ctermfg=cyan guifg=#30a58e"
 
 -- Bufferline

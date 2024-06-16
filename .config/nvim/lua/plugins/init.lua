@@ -37,9 +37,14 @@ require("lazy").setup({
   "hrsh7th/nvim-cmp",
   -- themes & visuals
   "hoob3rt/lualine.nvim",
-  "navarasu/onedark.nvim",
   "folke/trouble.nvim",
   "folke/lsp-colors.nvim",
+  {
+    "folke/tokyonight.nvim",
+    lazy = false,
+    priority = 1000,
+    opts = {},
+  },
   { "lukas-reineke/indent-blankline.nvim", main = "ibl", opts = {} },
   {
     "nvim-tree/nvim-tree.lua",
@@ -63,6 +68,14 @@ require("lazy").setup({
   "windwp/nvim-autopairs",
   "tpope/vim-sleuth",
   {"akinsho/flutter-tools.nvim", dependencies = { "nvim-lua/plenary.nvim" }},
+  {
+    "lervag/vimtex",
+    lazy = false,     -- we don't want to lazy load VimTeX
+    -- tag = "v2.15", -- uncomment to pin to a specific release
+    init = function()
+      -- VimTeX configuration goes here
+    end
+  },
 })
 
 -- Plugin-specific settings
