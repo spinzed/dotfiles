@@ -16,12 +16,22 @@ export HISTCONTROL=ignoreboth
 export SCREENSHOTDIR="$HOME/Pictures/Screenshots"
 
 if [ "$HOSTNAME" = "zenbook" ]; then
-	export JAVA_HOME="/usr/lib/jvm/java/"
+export JAVA_HOME="/usr/lib/jvm/java/"
 else
-	export JAVA_HOME="/usr/lib/jvm/default-runtime"
+export JAVA_HOME="/usr/lib/jvm/default-runtime"
 fi
 
-type &>/etc/profile.d/cuda.dsh && /etc/profile.d/cuda.sh # fucking cuda
+# Fedora module
+if [ -f /etc/profile.d/modules.sh ]; then
+source /etc/profile.d/modules.sh
+fi
+
+# cuda
+if [ -f /etc/profile.d/cuda.sh ]; then
+source /etc/profile.d/cuda.sh
+fi
+
+module load mpi/openmpi-x86_64
 
 # VSCodium environment variables
 export VSCODE_GALLERY_SERVICE_URL='https://marketplace.visualstudio.com/_apis/public/gallery'
@@ -39,10 +49,10 @@ export MOZ_DISABLE_RDD_SANDBOX=1
 export EGL_PLATFORM=wayland
 
 if [ "$HOSTNAME" = "masina" ]; then
-	export LIBVA_DRIVER_NAME=nvidia
-	export GBM_BACKEND=nvidia-drm
-	export __GLX_VENDOR_LIBRARY_NAME=nvidia
-	export _JAVA_AWT_WM_NONREPARENTING=1
+export LIBVA_DRIVER_NAME=nvidia
+export GBM_BACKEND=nvidia-drm
+export __GLX_VENDOR_LIBRARY_NAME=nvidia
+export _JAVA_AWT_WM_NONREPARENTING=1
 fi
 
 # Call .bashrc on login shell

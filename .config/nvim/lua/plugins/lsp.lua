@@ -3,6 +3,10 @@
 
 local lsp = require("lspconfig")
 
+-- Nvim builtin diagnostic stuff
+vim.diagnostic.config({ virtual_text = true })
+--vim.diagnostic.config({ virtual_lines = true })
+
 -- Go language server
 lsp.gopls.setup{
     cmd = {"gopls", "serve"},
@@ -38,7 +42,7 @@ vim.api.nvim_command("autocmd BufWritePre * lua vim.lsp.buf.format(nil, 1000)")
 lsp.pyright.setup{}
 
 -- TS language server. Works w/ JS & React too
-lsp.tsserver.setup{}
+lsp.ts_ls.setup{}
 
 -- C/Cpp language server. This is clang LS, but should work pretty well with gcc
 lsp.clangd.setup{ capabilities = { offsetEncoding = "utf-8" } }
